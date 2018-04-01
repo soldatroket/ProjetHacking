@@ -5,10 +5,15 @@ Class
 .. contents:: Liste des classes
    :depth: 2
 
-.. class:: LdapTest
--------------------
+LdapTest
+--------
 
-Cette classe nous permet de manipuler l'annuaire Ldap.
+.. class:: LdapTest
+
+Description
++++++++++++
+
+Cette classe nous permet de **manipuler l'annuaire Ldap**.
 Avant tout il vous faut invoquer vote classe si vous souhaitez l'utilisé.
 Pour ce faire, vous faite
 
