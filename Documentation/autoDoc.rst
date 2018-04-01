@@ -31,9 +31,9 @@ Une fois ceci fait vous pouvez appellez l'ensemble des classes de ces fichiers.
 
 Template
 ========
-Le packetage contient des scripts de template pour les pages HTML
+Le packetage « **Template** » contient des scripts de template pour les pages HTML
 
-Pour pouvoir utilisés l'un de ces templates vous devez tout d'abord l'importez en faisant : 
+Pour pouvoir utilisés l'un de ces templates vous devez tout d'abord l'importer en faisant : 
 
 .. code-block:: python
    :linenos:
