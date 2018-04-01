@@ -12,6 +12,8 @@ This is my documentation of my project
    :maxdepth: 2
    :caption: Contents:
 
+.. autoclass:: LdapTest
+   
    autoDoc
 
 Indices and tables
