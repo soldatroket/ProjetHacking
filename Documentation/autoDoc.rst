@@ -12,10 +12,13 @@ Pour pouvoir utilisé une des classes des fichiers suivants :
 -***cookies.py***
 -***password.py***. 
 
-Vous devez tout d’abord importer le Package nommé « Utils » qui vous importera l’ensemble de ces scripts. En inscrivant uniquement cette commande en début de script : 
-.. code-block:: ruby
-      
+Vous devez tout d’abord importer le Package nommé « Utils » qui vous importera l’ensemble de ces scripts. En inscrivant uniquement cette commande en début de script :
+
+.. code-block:: python
+   :linenos:   
       import Utils
+
+.. literalinclude:: ldapp.py
 
 .. py:class:: LdapTest
 
