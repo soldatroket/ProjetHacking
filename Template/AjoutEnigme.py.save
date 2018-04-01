@@ -1,0 +1,61 @@
+#!/usr/bin/env python
+#coding: utf-8
+
+def Display(point, cat):
+	print '''<div class="content_position">
+                        <div class="Titre">
+                                Ajout d'énigmes
+                        </div>
+                        <div class="formulaire_pos">
+                                <div class="formulaire_style">
+                               <table>
+	                                <form enctype="multipart/form-data" method="post" action="b2d.py">
+                                        <input type="hidden" name="type" value="addenigme">
+                                        <tr>
+                                                <td colspan="2"><hr>OBLIGATOIRE<hr></td>
+                                        </tr>
+                                        <tr>
+                                                <td>TITRE :</td>
+                                                <td><input type="text" name="title" placeholder="Titre de l'énigme" required></td>
+                                        </tr>
+                                        <tr>
+                                                <td>QUESTION :</td>
+                                                <td><textarea name="answer" placeholder="Qestion de votre énigme" required></textarea></td>
+                                        </tr>
+                                        <tr>
+                                                <td>REPONSE :</td>
+                                                <td><textarea name="reponse" placeholder="reponse de votre énigme" required></textarea></td>
+                                        </tr>
+                                        <tr>
+                                                <td>DIFFICULTER : </td>
+                                                <td><select name="strenght" required>
+                                        '''
+	for row in point:
+		print "<option value="+str(row[2])+">"+row[1]+" ("+str(row[2])+" points)</option>"
+	print '''
+                                        </select></td>
+                                                <td>CATEGORIE :</td>
+                                                <td><select name="cat" required>
+                                        '''
+	for row in cat:
+		print "<option value="+str(row[1])+">"+row[1]+"</option>"
+	print '''
+                                        </select></td>
+                                        </tr>
+                                        <tr>
+                                                <td colspan="2"><hr>OPTIONNEL<hr></td>
+                                        </tr>
+                                        <tr>
+                                                <td>Fichier: </td>
+                                                <td><input name="file" type="file"></td>
+                                        </tr>
+                                        <tr>
+                                                <td colspan="2"><input type="submit"></td>
+                                </table>
+                                </form>
+                                </div>
+                        </div>
+                        </div>
+                        </body>
+                        </html>
+                '''

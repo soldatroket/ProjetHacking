@@ -1,0 +1,59 @@
+#!/usr/lib/python
+import cgi
+import Cookie
+import random
+import os
+import sql
+
+class cookies:
+	def SetCookie(self, cn, memberof, DNmemberof,DNiut,status):
+		sqlDB=sql.SQLTest()
+		cookie=Cookie.SimpleCookie()
+		SessionNumber=random.randint(1,1000000000)
+		cookie['session']=SessionNumber
+		cookie['session']['expires']=1*1*3*60*60
+		cookie['name']=cn
+		cookie['status']=status
+		cookie['DNteamName']=DNmemberof
+		cookie['DNiut']=DNiut
+		cookie['teamName']=memberof
+		result=sqlDB.Search("Name", "AdminToken", None)
+		print'Content-type: text/html'
+		print''
+		val=(cn, SessionNumber)
+		if len(result)!=0:
+			for row in result:
+				if(row[0]==cn):
+					Where="`Name` = '"+cn+"'"
+					sqlDB.DelEntry("AdminToken", Where)
+				sqlDB.AddEntry("AdminToken", "Name, Token", val)
+		else:
+			sqlDB.AddEntry("AdminToken", "Name, Token", val)
+		print cookie
+		print'Content-type: text/html'
+		#print'Location: menu.py'
+		print'\n'
+	
+	def ReadSession(self, cookieName):
+		if 'HTTP_COOKIE' in os.environ:
+			c=Cookie.SimpleCookie(os.environ['HTTP_COOKIE'])
+			try:
+				data=c[cookieName].value
+				return data
+			except KeyError:
+				return "no cookie"
+		else:
+			return "no cookie"
+			
+	def Deconnexion(self):
+		cookie=Cookie.SimpleCookie()
+		cookie['session']=0
+		cookie['session']['expires']=0
+		cookie['name']=None
+		cookie['status']=None
+		cookie['DNteamName']=None
+		cookie['teamName']=None
+		print cookie
+		print'Content-type: text/html'
+		print'Location: index.py'
+		print'\n'

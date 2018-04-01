@@ -1,0 +1,66 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+import mysql.connector
+import cgi
+import cgitb
+cgitb.enable()
+class SQLTest:
+	def Connection(self):
+		conn = mysql.connector.connect(host="localhost",user="root",password="lolotte", database="concours")
+		return conn
+
+	def Search(self, Select, From, Where):
+		conn = self.Connection()
+		cursor = conn.cursor()
+		if(Where==None):
+			query = "SELECT "+Select+" FROM "+From+""
+		else:
+			query = "SELECT "+Select+" FROM "+From+" WHERE "+Where+""
+		try:
+			cursor.execute(query)
+			rows = cursor.fetchall()
+		except mysql.connector.Error as err:
+			print err
+		conn.commit()
+		return rows
+
+	def AddEntry(self, table, attr, value):
+		conn = self.Connection()
+		cursor = conn.cursor()
+		val=""
+		for i in range(len(value)):
+			if i==0:
+				val+="%s"
+			else:
+				val+=",%s"
+		query = ("INSERT INTO "+table+" ("+attr+") " "VALUES ("+val+")")
+		try:
+			cursor.execute(query, value)
+		except mysql.connector.Error as err:
+			print "Erreur AddEntry : "
+			print err
+		conn.commit()
+
+	def UpdateEntry(self, From, Set, Where):
+		conn = self.Connection()
+		cursor = conn.cursor()
+		query = ("UPDATE "+From+" SET "+Set+" WHERE "+Where+"")
+		print query
+		try:
+			cursor.execute(query, var)
+		except mysql.connector.Error as err:
+			print err
+		conn.commit
+
+	def DelEntry(self, From, Where):
+		conn = self.Connection()
+		cursor = conn.cursor()
+		print "Where : "+Where
+		query = ("DELETE FROM `"+From+"` WHERE "+Where)
+		print "QUERY : "+query
+		try:
+			cursor.execute(query)
+		except mysql.connector.Error as err:
+			print "Erreur DelEntry : "
+			print err
+		conn.commit

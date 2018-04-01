@@ -1,0 +1,146 @@
+########################################################################################################################################
+#######################################################    LDAPP.PY    #################################################################
+########################################################################################################################################
+
+LDAPP.PY contient une classe LdapTest() qui permet de laisser toutes les opérations en lien avec l'annuaire LDAP
+
+Connection(dn, mdp) = fonction qui creer un objet de connexion avec le serveur ldap, puis le renvoie.
+	dn=Chaine de caracteres qui contient le dn de l utilisateur 
+	mdp=chaine de caractere qui contient le mot de passe associer au dn
+
+Search(baseDN, searchScope, retrieveAttributes, searchFilter, MultResult, returnDN) = fonction de recherche sur base ldap. renvoie une valeur sous forme de chaine de caractere, ou un tableaux de chaine de caractére si MultResult = True
+	baseDN = Chaine de caractere qui correspond au dn ou l ont veut effectuer notre recheche exenmmple : "ou=people,o=concours"
+        searchScope = Definit le scope de la recheche(base, subtree, children ou ) exemple : ldap.SCOPE_SUBTREE
+        retrieveAttributes = Tableau de chine de caractere qui contient ou un plusieurs attributs que l ont souhaite rechercher. laisser le tavoeaux vide pour rechercher tout les attributs exemple : ['cn']
+        searchFilter = Chaine de caractere qui definit la condition de recherche exemple: "secretary="+dnIUT
+	MultResult = Boolean qui definit si la fonction vas nius retourner un seul resltat ou plusieurs (False=un seul, True=plusieurs)
+	returnDN = Boolean qui definit si la donction vas nous renvoyer le DN de l objet trouver ou non. (True=renvoye di dn, False=renvoye des attributs rechercher)
+
+AddMember(cn, sn, mail, DNiut, employee, password) = Fonction qui rajoute un membre dans l'annuaire ldap
+	cn = Chaine de caractere qui ocntient le pseudo du membre
+	sn = Chaine de caractere qui contient le nom et prenom du membre
+	mail = Chaine de caractere qui contient le mail du membre
+	DNiut = Chaine de caratere qui contient le DN de l'iut auquel appartient le membre
+	employee = Chaine de caractere qui contient le statut de membre ("student" ou "admin")
+	password = Chaine de caractere qui correpsond au mot de passe de connexion du membre
+
+DelMember(dn) = Fonction qui supprime un objet de l'annuaire ldap
+	dn = Chaine de caractere qui correspond au DN à supprimer
+
+AddGroup(teamName, members, dnIUT, owner) = Fonction utiliser pour rajouter une équipe
+	teamName = Chaine de caractere qui correspond au nom de l'équipe
+	members = Tableau qui contientle pseudo des membres de l'équipe
+	dnIUT = Chaine de caractere qui contient le DN de l'IUT responsable de l'équipe
+	owner = Chaine de charactere qui contient le pseudo de l'admin de l'équipe
+
+ModifyGroup(DNiut, TeamName, NewTeamName, NewMember) = Fonction qui modifie les attributs d'une équipe
+	DNiut = Chaine de caractere qui correspond au DN de l'IUT responsable de l'équipe
+	TeamName = Chaine de caractere qui contient le nom de l'équipe
+	NewTeamName = Chaine de caractere qui contient le nouveau nom de l'équipe
+	NewMember = Tableau qui contient le DN des nouveaux membres
+
+AddScore(value, DNteam) = Fonction qui rajoute un score à une équipe
+	value = Nombre qui correspond au nombre de point supplémentaire de l'équipe
+	DNteam = Chaine de caractere qui correspond au DN de l'équipe
+
+GetScoreIUT(DNiut) = Fonction qui retourne le score total d'un IUT
+	DNiut = Chaine de charactere qui correspond à l'IUT souhaiter
+
+Compare(dn, attr, value) = Fonction qui compare le resultat d'un attribut dans l'annuaire ldap avec une valeur donner. Renvoie True si la valeur comparer est identique a celle de l'annuaire. Renvoye Faalse dans le cas contraire
+	dn = Chaine de caractere qui contient le dn de l'objet a comparer
+	attr = Chaine de caractere qui contient l'attribut a comparer
+	value = Contient votre valeur a comparer 
+
+AddScore(value, DNteam) = Fonction qui rajoute un score a une équipe à l'annuaire ldap
+	value = Int qui correspond au score a rajouter
+	DNteam = Chaine de caractére qui correspond au DN de l'équipe a modifier
+
+Modify(cn, attr, value) = Fonction qui permet de modifier un attribut d'un membre de l'annuaire
+	cn = Chaine de caractere qiu correspond au pseudo du membre
+	attr = Chaine de caractere qui correspond à l'attribut à modifier
+	value = Chaine de caractere qui correspond a la nouvelle valeur de l'attribut
+
+GetDN(dn, usr) = Fonction qui renvoie le DN d'un objet
+	dn = Chaine de caractere qui correspond a la zone ou ce trouve l'objet rechercher
+	usr = Chaine de caractere qui correspond au nom de l'objet
+
+########################################################################################################################################
+#######################################################    COOKIES.PY    ###############################################################
+########################################################################################################################################
+
+SetCookie(cn, memberof, DNmemberof,DNiut,status) = Fonctions qui permet d'écrire un ensemble de cookies afin de réaliser un "session"
+	cn = Chaine de caractere qui contient le pseudo du membre
+	memberof = Chaine de caractere qui contient le nom de la team du membre
+	DNmemberof = Chaine de caractere qui contient le DN de la team du membre
+	DNiut = Chaine de caractere qui contient le DN de l'iut du membre
+	status = Chaine de caractere qui contient le "status" du membre les status possible sont "admin" et "student"
+
+
+
+ReadSession(cookieName) = Fonction qui returne la valeur d'un cookie spécifique 
+	cookieName = Chaine de caractere qui contient le nom du cookie rechercher
+
+ResetSession() = Fonction généralement utiliser pour la déconnexion, il supprime tout les cookies inscrits
+
+VerifAdmin(token) = Fonction qui compare un token avec le token de la base de donnée mysql. Renvoie True si égaux, False si différent
+	token = chaine de caractére qui contient le token a comparer
+
+########################################################################################################################################
+#######################################################   PASSWORD.PY    ###############################################################
+########################################################################################################################################
+
+SendPass(mail, password) = Fonction qui envoye par mail un mot de passe a un membre
+	mail = Chaine de caractere qui contient le mail du membre
+	password = Contient le mot de passe generer par la fonction GeneratePass
+
+GeneratePass(mail) = Fonction qui permet de genérer un mot de passe aléatoire et l'envoyer grace a la fonction SendPass
+	mail = Chaine de caractere qui contient le mail du membre a envoyer le mot de passe
+
+########################################################################################################################################
+#########################################################   SQL.PY    ##################################################################
+########################################################################################################################################
+
+le fichier sql.py contient la classe SQLTest(db). Elle prend comme parametre le nom de la base de donnée sur laquelle se connecter
+
+SetDB(db) = Fonction qui redefinit la base données sur laquelle on se connecte
+	db = chaine de caractere qui correspond au nom de la database
+
+Connection() = Fonction qui crée un objet de connection a votre base sql puis le renvoie
+
+Search(Select, From, Where) = Fonction qui effectue une recherche sur votre DB et retourne le resultat sous forme de tableau
+	Select = Chaine de caractere qui contient le ou les attributs recherchez
+	From = Chaine de caractere qui correspond a la table
+	Where = Chaine de caractere qui contient les conditions de la recherche. Exemple : "ID=`1`".S'il n'y as pas de condition mettre : None
+
+AddEntry(table, attr, value) = Fonction qui ajoute une entree dans une table
+	table = chaine de caractere qui correspond au nom de la table
+	attr = chaine d ecaracter qui contient le ou les attributs de la table
+	value = tuple qui contient le ou les valeurs des attributs
+
+UpdateEntry(table, attr, value, where) = Fonction qui met a jour une entree dans une table
+	table = Chaine de caractere qui correspond au nom de la table concerner
+	attr = tuple qui contient le ou les attributs à mettre à jour
+	value = tuple qui contient la ou les valeurs des attributs
+	where = tuple qui doit contenir deux éléments. En premier l'attribut et en second votre valeur. Exemple : ("ID", 2)
+	
+DelEntry(table, attr, value) = Fonction qui supprime une entrée d'une table
+	table = Chaine de caractere qui correspond a la table souhaiter
+	attr = Chaine de caractere qui correspond a l'attribut sur lequelle vous souhaiter identifier l'entree à supprimer
+	value = Chaine de caractere qui correspond a la valeur que doit etre égal attr
+
+CreateTeamTable(Name) = Fonction qui créer une table correspondant à une équipe
+	Name = Chaine de caractere qui correspond au nom de l'équipe
+
+DeleteTable(Name) = Fonction Qui supprime une table
+	Name = Chaine de caractere qui correspond à la table à supprimer
+
+Compare(table, attr, where, value) = Fonction qui compare un attribut de la base de donnée avec une valeur. renvoie True ou False suivant s'ils ont égaux ou non
+	table = Chaine de caractere qui correspond à la table
+	attr = chaine de caractere qui contient l'attribut a comparer
+	where = Chaine de caractere qui contient la condition de la recherche. (Voir exemple dans la fonction search)
+	value = Correspond a la valeur que l'ont souhaite comparer
+
+VerifQuestionTeam(teamName, ID) = Fonction qui verifie si une équipe a deja repondue a une question. retourne True ou False suivant le resultat
+	teamName = Chaine de caractere qui correspond au nom de la team
+	ID = ID de la question que l'ont souhaite verifier
+	
