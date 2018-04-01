@@ -26,6 +26,4 @@ Vous devez tout d’abord importer le Package nommé « **Utils** » qui vous im
       
       import Utils
 
-.. class:: LdapTest
-
 Une fois ceci fait vous pouvez appellez l'ensemble des classes de ces fichiers.
