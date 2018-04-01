@@ -6,7 +6,7 @@
 Welcome to ConcourHacking's documentation!
 ==========================================
 
-This is my documentation of my project
+Ceci est la documentation d'un projet tuteurée dont le sujet est de réaliser un site web pour un concours de hacking
 
 .. toctree::
    :maxdepth: 2
