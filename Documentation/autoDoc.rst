@@ -10,9 +10,9 @@ Ceci est le texte de la première page de notre demo. Il vise \
 
 .. py:class:: LdapTest
 
-   .. py:method:: Search(baseDN, test)
+.. py:method:: LdapTest.Search(baseDN, test)
       
-      ..py:attribute:: baseDN
+      .. py:attribute:: baseDN
         
         blablabalbalblalab
 
