@@ -7,8 +7,8 @@ Package
 
 Utils
 =====
-Le packetage Utils contient un ensemble de scripts permettant entre autre de communiquer avec la **base SQL**, **annuaire Ldap**, **Lecture/Ecriture de cookies**, **Gestion mot de passe**
-|
+Le packetage Utils contient un ensemble de scripts permettant entre autre de communiquer avec la **base SQL**, **annuaire Ldap**, **Lecture/Ecriture de cookies**, **Gestion mot de passe**.
+
 Pour pouvoir utilisé une des classes des fichiers suivants : 
 
 -**ldapp.py**
@@ -25,5 +25,7 @@ Vous devez tout d’abord importer le Package nommé « **Utils** » qui vous im
    :linenos:   
       
       import Utils
+
+.. class:: LdapTest
 
 Une fois ceci fait vous pouvez appellez l'ensemble des classes de ces fichiers.
