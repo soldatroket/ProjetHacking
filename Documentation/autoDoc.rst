@@ -2,11 +2,20 @@
 Premiere page 
 ************* 
 
-Introduction 
-************ 
+Package 
+******* 
 
-Ceci est le texte de la première page de notre demo. Il vise \ 
-à introduire le fonctionnement de Sphinx-doc pour créer de la documentation. 
+Pour pouvoir utilisé une des classes des fichiers suivants : 
+
+-***ldapp.py***
+-***sql.py***
+-***cookies.py***
+-***password.py***. 
+
+Vous devez tout d’abord importer le Package nommé « Utils » qui vous importera l’ensemble de ces scripts. En inscrivant uniquement cette commande en début de script : 
+.. code-block:: ruby
+      
+      import Utils
 
 .. py:class:: LdapTest
 
