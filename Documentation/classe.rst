@@ -1,7 +1,4 @@
-=============
-Deuxieme page 
-=============
-
+=====
 Class
 =====
 
@@ -16,7 +13,6 @@ Avant tout il vous faut invoquer vote classe si vous souhaitez l'utilisé.
 Pour ce faire, vous faite
 
 .. code-block:: python
-   :depth:2
    :linenos:
    
    LdapTest=Utils.ldapp.LdapTest
@@ -29,5 +25,3 @@ cookies
 
 password
 --------
-
-
