@@ -2,8 +2,11 @@
 Premiere page 
 ************* 
 
-List of class
+Class
 ************* 
+
+.. contents:: Liste des classes
+   :depth: 2
 
 LdapTest
 ========
