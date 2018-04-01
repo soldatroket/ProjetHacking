@@ -11,8 +11,6 @@ This is my documentation of my project
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-.. autoclass:: LdapTest
    
    autoDoc
 
