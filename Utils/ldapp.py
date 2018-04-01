@@ -7,6 +7,7 @@ import password
 #Fichier qui contient la classe LdsapTest qui permet de manipuler l'annuaire Ldap
 
 class LdapTest:
+	#Class permettant de réaliser des opérations dans l'annuaire Ldap
 	def Connection(self, dn, mdp):
 		#Fonction qui permet de se connecter à un annuaire Ldap et retourne la connexion
 		l=ldap.initialize("ldap://lws.ovh")			#On initialise la connexion sur notre Ldap
