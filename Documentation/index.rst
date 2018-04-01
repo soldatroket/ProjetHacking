@@ -13,6 +13,7 @@ Ceci est la documentation d'un projet tuteurée dont le sujet est de réaliser u
    :caption: Contents:
    
    autoDoc
+   classe
 
 Indices and tables
 ==================
