@@ -50,6 +50,9 @@ LdapTest
    :param str baseDN: DN de base d'ou l'ont souhaite réaliser la recherche
    :param str searchScope: Paramétre de recherche Ldap, peut valoir : LDAP.SCOPE_BASE, LDAP.SCOPE_SUBTREE, LDAP.SCOPE_CHILDREN 
    :param list(str) retrievAttributes: Tableau contenant le nom des attributs recherchés
+   :param str searchFilter: Contient la condition de recherche
+   :param bool retrievAttributes: Si **False** la méthode retournera une seule reponse sous forme de chaine de caractére. **True** elle retournera une ou plusieurs réponse sous forme de tableau.
+   :param list(str) retrievAttributes: Si **True** la méthode retournera uniquement le **DN** de la réponse
    :return: Un tableau ou une chaine de caractére
    :rtype: list(str) or str
    
