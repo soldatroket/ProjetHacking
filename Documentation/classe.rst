@@ -32,12 +32,12 @@ LdapTest
    :return: LdapObject
    :rtype: Object
    
-   Exemple : 
+   **Exemple :** 
    
    .. code-block:: python
-   :linenos:
+      :linenos:
    
-   LdapObj=LdapTest.Connection("cn=admin,o=concours","toto")
+      LdapObj=LdapTest.Connection("cn=admin,o=concours","toto")
 
    
 SqlTest
