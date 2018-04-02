@@ -51,6 +51,8 @@ LdapTest
    :return: Un tableau ou une chaine de caractére
    :rtype: list(str) or str
    
+.. warning:: Pour pouvoir utilisé les paramétres de recherches Ldap, vous devez tout d'abord importé le module **ldap**
+   
    **Exemple :** 
    
    .. code-block:: python
