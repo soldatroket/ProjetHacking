@@ -40,7 +40,9 @@ LdapTest
       :linenos:
    
       LdapObj=LdapTest.Connection("cn=admin,o=concours","toto")
-      
+
+
+
 .. method:: LdapTest.Search(baseDN, searchScope, retrieveAttributes, searchFilter, MultResult, returnDN)
 
    Cette méthode est utilisé pour réaliser des recherches dans l'annuaire Ldap.
@@ -52,6 +54,7 @@ LdapTest
    :rtype: list(str) or str
    
 .. warning:: Pour pouvoir utilisé les paramétres de recherches Ldap, vous devez tout d'abord importé le module **ldap**
+   
    
    **Exemple :** 
    
