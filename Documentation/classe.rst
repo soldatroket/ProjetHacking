@@ -22,6 +22,8 @@ LdapTest
    
    LdapTest=Utils.ldapp.LdapTest
    
+   
+   
 .. method:: LdapTest.Connection(dn,mdp)
 
    Cette méthode est utilisé uniquement par le script lui même.
@@ -31,6 +33,23 @@ LdapTest
    :param str recipient: Mot de passe liée au DN
    :return: LdapObject
    :rtype: Object
+   
+   **Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      LdapObj=LdapTest.Connection("cn=admin,o=concours","toto")
+      
+.. method:: LdapTest.Search(baseDN, searchScope, retrieveAttributes, searchFilter, MultResult, returnDN)
+
+   Cette méthode est utilisé pour réaliser des recherches dans l'annuaire Ldap.
+   
+   :param str baseDN: DN de base d'ou l'ont souhaite réaliser la recherche
+   :param str searchScope: Paramétre de recherche Ldap, peut valoir : LDAP.SCOPE_BASE, LDAP.SCOPE_SUBTREE, LDAP.SCOPE_CHILDREN 
+   :param list(str) retrievAttributes: Tableau contenant le nom des attributs recherchés
+   :return: Un tableau ou une chaine de caractére
+   :rtype: list(str) or str
    
    **Exemple :** 
    
