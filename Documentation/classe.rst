@@ -1,4 +1,4 @@
-=====
+d=====
 Class
 =====
 
@@ -24,8 +24,13 @@ LdapTest
    
 .. method:: LdapTest.Connection(dn,mdp)
 
-   Cette fonction est utilisé uniquement par le script lui même.
+   Cette méthode est utilisé uniquement par le script lui même.
    Elle permet d'initialisé une connection avec un annuaire Ldap et retourne un objet **LdapObject**
+   
+   :param str dn: DN de connexion
+   :param str recipient: Mot de passe liée au DN
+   :return: LdapObject
+   :rtype: Object
 
    
 SqlTest
