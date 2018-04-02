@@ -15,16 +15,17 @@ LdapTest
 
        Cette classe nous permet de **manipuler l'annuaire Ldap**.
        Avant tout il vous faut invoquer vote classe si vous souhaitez l'utilisé.
-       Pour ce faire, vous faite
+       Pour ce faire, vous faite :
 
 .. code-block:: python
    :linenos:
    
    LdapTest=Utils.ldapp.LdapTest
    
-.. function:: LdapTest.Connection()
+.. method:: LdapTest.Connection(dn,mdp)
 
-   Describes a Python function.
+   Cette fonction est utilisé uniquement par le script lui même.
+   Elle permet d'initialisé une connection avec un annuaire Ldap et retourne un objet **LdapObject**
 
    
 SqlTest
