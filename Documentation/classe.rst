@@ -31,6 +31,13 @@ LdapTest
    :param str recipient: Mot de passe liée au DN
    :return: LdapObject
    :rtype: Object
+   
+   Exemple : 
+   
+   .. code-block:: python
+   :linenos:
+   
+   LdapObj=LdapTest.Connection("cn=admin,o=concours","toto")
 
    
 SqlTest
