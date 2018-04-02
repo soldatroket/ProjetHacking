@@ -55,8 +55,7 @@ LdapTest
    
 .. warning:: Pour pouvoir utilisé les paramétres de recherches Ldap, vous devez tout d'abord importé le module **ldap**
    
-   
-   **Exemple :** 
+**Exemple :** 
    
    .. code-block:: python
       :linenos:
