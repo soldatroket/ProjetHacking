@@ -22,6 +22,11 @@ LdapTest
    
    LdapTest=Utils.ldapp.LdapTest
    
+.. function:: LdapTest.Connection()
+
+   Describes a Python function.
+
+   
 SqlTest
 -------
 
