@@ -8,16 +8,16 @@ Welcome to ConcourHacking's documentation!
 
 Ceci est la documentation d'un projet tuteurée dont le sujet est de réaliser un site web pour un concours de hacking
 
+Télécharger le!
+---------------
+
+Le code source peut être obtenue via Git::
+
+    git clone https://github.com/soldatroket/ProjetHacking
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
    
    autoDoc
    classe
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
