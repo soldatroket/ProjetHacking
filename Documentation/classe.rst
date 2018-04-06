@@ -85,8 +85,23 @@ LdapTest
       :linenos:
    
       LdapTest=Utils.ldapp.LdapTest
-      result=LdapTest.AddMember("paul", "dupont", "paul.dupont@yopmail.com", "ou=M2M,o=iut,o=concours", "Admin", "ZedkfjvDFg")
+      LdapTest.AddMember("paul", "dupont", "paul.dupont@yopmail.com", "ou=M2M,o=iut,o=concours", "Admin", "ZedkfjvDFg")
 
+.. method:: LdapTest.DelMember(dn)
+
+   Cette méthode est utilisé pour supprimé un membre de l'annuaire Ldap
+   
+   :param str dn: Correspond au DN du membre à supprimé.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      LdapTest=Utils.ldapp.LdapTest
+      LdapTest.DelMember("cn=paul,ou=people,o=concours")
 
 SqlTest
 -------
