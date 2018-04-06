@@ -25,7 +25,7 @@ LdapTest
    
    
 .. method:: LdapTest.Connection(dn,mdp)
-
+            ---------------------------
    Cette méthode est utilisé uniquement par le script lui même.
    Elle permet d'initialisé une connection avec un annuaire Ldap et retourne un objet **LdapObject**
    
