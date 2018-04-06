@@ -174,7 +174,26 @@ LdapTest
       :linenos:
    
       LdapTest=Utils.ldapp.LdapTest
-      result=LdapTest.AddScore(12, "LesBG92")
+      LdapTest.AddScore(12, "LesBG92")
+
+.. method:: LdapTest.Modify(cn, attr, value)
+
+   Cette méthode nous permet de modifié un attribut d'un membre
+   
+   :param str cn: Pseudonyme du membre à modifié.
+   :param str attr: Nom de l'attribut à modifié.
+   :param str value: La nouvelle valeur de l'attibut
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      LdapTest=Utils.ldapp.LdapTest
+      LdapTest.AddModify("jean", "mail", "jean.paul@gmail.com"
+
 
 SqlTest
 -------
