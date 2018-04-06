@@ -192,7 +192,7 @@ LdapTest
       :linenos:
    
       LdapTest=Utils.ldapp.LdapTest
-      LdapTest.AddModify("jean", "mail", "jean.paul@gmail.com"
+      LdapTest.Modify("jean", "mail", "jean.paul@gmail.com"
 
 
 SqlTest
