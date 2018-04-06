@@ -141,6 +141,23 @@ LdapTest
       LdapTest=Utils.ldapp.LdapTest
       LdapTest.ModifyGroup("ou=M2M,o=iut,o=concours", "LesHackeurs92", "LesBG92",["cn=paul,ou=people,o=concours","cn=roberto,ou=people,o=concours"])
 
+.. method:: LdapTest.Compare(dn, attr, value)
+
+   Cette méthode est utilisé pour comparé l'annuaire Ldap.
+   
+   :param str dn: Correspond au DN de l'objet qui contient l'attribut que vous souaitez comparé.
+   :param str attr : Correspond à l'attribut à comparé. 
+   :param str value: Contient la valeur qui vas être utilisé pour la comparaison.
+   :return: Retourne un boolean qui correpsond au résulat de la comparaison. *True = Comparaison vérifié*
+   :rtype: *bool*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      LdapTest=Utils.ldapp.LdapTest
+      result=LdapTest.Compare("cn=paul,ou=people,o=concours", "userPassword", "ZlDFgfdgdLGF")
 
 SqlTest
 -------
