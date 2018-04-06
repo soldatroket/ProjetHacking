@@ -121,6 +121,25 @@ LdapTest
    
       LdapTest=Utils.ldapp.LdapTest
       LdapTest.AddGroup("LesHackeursDu92", ["jean","pierre","paul"], "ou=M2M,o=iut,o=concours", "henry")
+      
+.. method:: LdapTest.ModifyGroup(DNiut ,TeamName, NewTeamName, NewMember)
+
+   Cette méthode est utilisé pour modifié une équipe dans l'annuaire Ldap.
+   
+   :param str DNiut: Correspond au DN de l'iut responsable de l'équipe.
+   :param str TeamName : Correspond au nom actuel de l'équipe. 
+   :param str NewTeamName: Correspond au nouveau nom de l'équipe.
+   :param str NewMember: Correspond à un tableau contenant les DN des membres de l'équipe.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      LdapTest=Utils.ldapp.LdapTest
+      LdapTest.ModifyGroup("ou=M2M,o=iut,o=concours", "LesHackeurs92", "LesBG92",["cn=paul,ou=people,o=concours","cn=roberto,ou=people,o=concours"])
 
 SqlTest
 -------
