@@ -158,6 +158,23 @@ LdapTest
    
       LdapTest=Utils.ldapp.LdapTest
       result=LdapTest.Compare("cn=paul,ou=people,o=concours", "userPassword", "ZlDFgfdgdLGF")
+      
+.. method:: LdapTest.AddScore(value, DNteam)
+
+   Cette méthode est utilisé pour rajouté un score à une équipe de l'annuaire Ldap.
+   
+   :param int value: Correspond au nombre de points que l'ont souhaite rajouté à l'équipe.
+   :param str DNteam: Correspond au DN de l'équipe.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      LdapTest=Utils.ldapp.LdapTest
+      result=LdapTest.AddScore(12, "LesBG92")
 
 SqlTest
 -------
