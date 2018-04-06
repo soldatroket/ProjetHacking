@@ -102,6 +102,25 @@ LdapTest
    
       LdapTest=Utils.ldapp.LdapTest
       LdapTest.DelMember("cn=paul,ou=people,o=concours")
+      
+.. method:: LdapTest.AddGroup(teamName, members, dnIUT, owner)
+
+   Cette méthode est utilisé pour ajouté une équipe dans l'annuaire Ldap.
+   
+   :param str teamName: Correspond au nom de l'équipe.
+   :param list(str) members: Correspond à un tableau qui contient le pseudonyme de tout les membres de l'équipe. 
+   :param str dnIUT: Contient le DN de l'iut auquelle est rataché l'équipe.
+   :param str owner: Contient le pseudo de l'Administrateur qui est responsable de l'équipe.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      LdapTest=Utils.ldapp.LdapTest
+      LdapTest.AddGroup("LesHackeursDu92", ["jean","pierre","paul"], "ou=M2M,o=iut,o=concours", "henry")
 
 SqlTest
 -------
