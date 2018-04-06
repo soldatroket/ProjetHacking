@@ -25,7 +25,7 @@ LdapTest
    
    
 .. method:: LdapTest.Connection(dn,mdp)
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
    Cette méthode est utilisé uniquement par le script lui même.
    Elle permet d'initialisé une connection avec un annuaire Ldap et retourne un objet **LdapObject**
    
@@ -140,6 +140,7 @@ LdapTest
    
       LdapTest=Utils.ldapp.LdapTest
       LdapTest.ModifyGroup("ou=M2M,o=iut,o=concours", "LesHackeurs92", "LesBG92",["cn=paul,ou=people,o=concours","cn=roberto,ou=people,o=concours"])
+
 
 SqlTest
 -------
