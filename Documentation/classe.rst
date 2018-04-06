@@ -127,7 +127,7 @@ LdapTest
    Cette méthode est utilisé pour modifié une équipe dans l'annuaire Ldap.
    
    :param str DNiut: Correspond au DN de l'iut responsable de l'équipe.
-   :param str TeamName : Correspond au nom actuel de l'équipe. 
+   :param str TeamName***********: Correspond au nom actuel de l'équipe. 
    :param str NewTeamName: Correspond au nouveau nom de l'équipe.
    :param str NewMember: Correspond à un tableau contenant les DN des membres de l'équipe.
    :return: *None*
