@@ -66,7 +66,28 @@ LdapTest
       LdapTest=Utils.ldapp.LdapTest
       result=LdapTest.Search("ou=M2M,o=iut,o=concours", LDAP.SCOPE_SUBTREE, ["cn"], "objectclass=inetorgperson", True, False)
 
+.. method:: LdapTest.AddMember(cn, sn, mail, DNiut, employee, password)
+
+   Cette méthode est utilisé pour ajouté un membre dans dans l'annuaire Ldap sous le noeud *ou=people,o=concours*.
    
+   :param str cn: Correspond au pseudonyme du membre.
+   :param str sn: Correspond au second pseudonyme du membre. 
+   :param str mail: Correspond au mail unique du membre.
+   :param str DNiut: Contient le DN de l'iut auquelle est rataché le membre.
+   :param str employee: Correspond au type du membre.Pour un administrateur : **Admin** .Pour un joueur lambda : **Student** .
+   :param str password: Correspond au mot de passe du membre préalablement chiffré en sha1.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      LdapTest=Utils.ldapp.LdapTest
+      result=LdapTest.AddMember("paul", "dupont", "paul.dupont@yopmail.com", "ou=M2M,o=iut,o=concours", "Admin", "ZedkfjvDFg")
+
+
 SqlTest
 -------
 
