@@ -230,4 +230,37 @@ password
 .. code-block:: python
    :linenos:
    
-   Password=Utils.password.pass
+   Password=Utils.password.pass()
+      
+.. method:: pass.GeneratePass(mail)
+
+   Cette méthode nous permet de généré un mot de passe et l'envoye automatiquement à un email
+   
+   :param str mail: Correspond au mail auquelle ont envoye le mot de passe.
+   :return: *Renvoye le mot de passe généré*
+   :rtype: *str*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      Pass=Utils.password.pass()
+      Pass.GeneratePass("jean.paul@gmail.com")
+      
+.. method:: pass.SendPass(mail, password)
+
+   Cette méthode nous permet d'envoyé un mot de passe à un mail donné
+   
+   :param str mail: Correspond au mail auquelle ont envoye le mot de passe.
+   :param str password: Corepsond au mot de passe à envoyé.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      Pass=Utils.password.pass()
+      Pass.SendPass("jean.paul@gmail.com", "toto")
