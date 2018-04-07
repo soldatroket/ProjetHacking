@@ -54,8 +54,10 @@ Démarrage
 Sql
 ===
 
+--------------
+
   Installation
-  ------------
+--------------
 
   Ouvrez un terminal et inscrivez ceci :
     
