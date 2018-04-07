@@ -11,13 +11,13 @@ Voilà une liste qui définit toute les étapes :
 - `Modules`_
 
   Vous allé donc voir l'ensemble de ces composants
+  
+---------------  
 
 Ldap
 ====
 
-Dans notre projet on utilise la Version 3 du protocol Ldap.
-
---------------  
+Dans notre projet on utilise la Version 3 du protocol Ldap. 
   
 Installation
 ------------  
@@ -34,8 +34,8 @@ Installation
 .. warning::
             Lors de l'installation de slapd vous allé ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
             
-  Démarrage
------------
+Démarrage
+---------
 
     Pour Démarré votre annuaire il vous suffit de faire :
     
@@ -43,7 +43,8 @@ Installation
     :linenos:
           
     sudo service slapd start
-        
+
+--------------
        
 Sql
 ===
