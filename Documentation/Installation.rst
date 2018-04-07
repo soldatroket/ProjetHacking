@@ -59,7 +59,7 @@ Sql
 Installation
 ------------
 
-  Ouvrez un terminal et inscrivez ceci :
+  Ouvrez un terminal et inscrivez ceci pour lancé l'installation de votre server MySQL :
     
 .. code-block:: shell
     :linenos:
