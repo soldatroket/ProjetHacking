@@ -203,7 +203,7 @@ LdapTest
    :return: *DN de la réponse*
    :rtype: *str*
    
-.. warning:: Cette fonction est obselête et inutile, je conseille de ne pas l'utilisé.
+.. warning:: Cette fonction est obsolète et inutile, je conseille de ne pas l'utilisé.
 
 SqlTest
 -------
