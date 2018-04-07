@@ -17,8 +17,8 @@ Ldap
 
 Dans notre projet on utilise la Version 3 du protocol Ldap.
   
-Installation
-------------  
+  Installation
+  ------------  
 
   Ouvrez un terminal est installé le paquet suivant :
   
@@ -32,8 +32,8 @@ Installation
 .. warning::
             Lors de l'installation de slapd vous allé ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
             
-Démarrage
----------
+  Démarrage
+  ---------
 
     Pour Démarré votre annuaire il vous suffit de faire :
     
@@ -46,8 +46,8 @@ Démarrage
 Sql
 ===
 
-Installation
-------------
+  Installation
+  ------------
 
   Ouvrez un terminal et inscrivez ceci :
     
