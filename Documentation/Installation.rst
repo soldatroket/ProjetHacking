@@ -42,7 +42,7 @@ Une fois l'annuaire installé vous allé de voir le remplir, pour ce faire vous 
 J'ai mit à disposition le fichier de ma base qui se trouve dans BaseLDap/DB.LDIF. Ils vous restera ensuite plus qu'a éxecuté le commande si dessous.
 
 
-.. literalinclude:: ../BaseLdap/DB.LDIF
+.. literalinclude:: /BaseLdap/DB.LDIF
 
 
 .. code-block:: shell
