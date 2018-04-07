@@ -20,6 +20,8 @@ Ldap
 
 Dans notre projet on utilise la Version 3 du protocol Ldap. 
   
+------------------  
+  
 Installation
 ------------  
 
@@ -34,7 +36,9 @@ Installation
 
 .. warning::
             Lors de l'installation de slapd vous allé ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
-            
+           
+------------------           
+           
 Démarrage
 ---------
 
