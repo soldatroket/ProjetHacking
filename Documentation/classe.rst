@@ -213,5 +213,21 @@ SqlTest
 cookies
 -------
 
+-------------------------------
+
 password
 --------
+
+.. class:: LdapTest
+
+   Description
+   +++++++++++
+
+       Cette classe nous permet de **généré un mot de passe et de l'envoyé par mail**.
+       Avant tout il vous faut invoqué votre classe si vous souhaitez l'utilisé.
+       Pour ce faire, vous faite :
+       
+.. code-block:: python
+   :linenos:
+   
+   Password=Utils.password.pass
