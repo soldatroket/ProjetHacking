@@ -107,8 +107,7 @@ Démarrage
 
 .. note:: Par défaut, le serveur apache se lance automatiquement lors de son installation mais aussi à l'allumage de la machine.
 
-  
-  Pour démarré le serveur rentré ceci dans un terminal :
+Pour démarré le serveur rentré ceci dans un terminal :
   
 .. code-block:: shell
     :linenos:
