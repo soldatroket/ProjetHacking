@@ -10,7 +10,7 @@ Voilà une liste qui définit toute les étapes :
 - `Apache`_
 - `Modules`_
 
-  Vous allé donc voir l'ensemble de ces compoants
+  Vous allé donc voir l'ensemble de ces composants
 
 Ldap
 ====
@@ -31,8 +31,6 @@ Installation
 
 .. warning::
             Lors de l'installation de slapd vous allé ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
-            
-.. _Aide: https://doc.ubuntu-fr.org/slapd
             
 Démarrage
 ---------
@@ -59,4 +57,4 @@ Installation
     sudo apt install mysql-server
           
 .. warning::
-    Vous allé ensuite être invité à rentré un mot de passe. Il est très important il ne faut pas l'oublié!
+    Vous allez ensuite être invité à rentré un mot de passe. Il est très important il ne faut pas l'oublié!
