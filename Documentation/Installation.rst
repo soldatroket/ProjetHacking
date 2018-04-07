@@ -20,7 +20,7 @@ Dans notre projet on utilise la Version 3 du protocol Ldap.
 Installation
 ------------  
 
-Ouvrez un terminal est installé le paquet suivant :
+  Ouvrez un terminal est installé le paquet suivant :
   
 .. code-block:: shell
     :linenos:
@@ -32,8 +32,7 @@ Ouvrez un terminal est installé le paquet suivant :
 .. warning::
             Lors de l'installation de slapd vous allé ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
             
-    
-.. _Aide:: https://doc.ubuntu-fr.org/slapd
+.. _Aide: https://doc.ubuntu-fr.org/slapd
             
 Démarrage
 ---------
