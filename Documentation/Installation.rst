@@ -39,18 +39,31 @@ Installation
             Lors de l'installation de slapd vous allé ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
             
 Une fois l'annuaire installé vous allé de voir le remplir, pour ce faire vous devez tout d'abord créer une nouvelle base.
-J'ai mit à disposition le fichier de ma base qui se trouve dans BaseLDap/DB.LDIF. Ils vous restera ensuite plus qu'a éxecuté le commande si dessous.
-
-
-.. literalinclude:: /BaseLdap/DB.LDIF
-
+J'ai mit à disposition le fichier de ma base qui se trouve dans BaseLdap/DB.LDIF. Ils vous restera ensuite plus qu'a éxecuté le commande si dessous.
 
 .. code-block:: shell
     :linenos:
           
     sudo ldapadd -Y EXTERNAL -H ldapi:/// -f <Votre fichier>
+    
+Quand vous aurez crée votre base, il faudrat y mettre les noeuds principaux du projet qui ce trouve dans le fichier BaseLdap/NoeudPrincipal.LDIF grâce à la commande : 
+
+.. code-block:: shell
+    :linenos:
+          
+    sudo ldapadd -D "cn=admin, o=concours" -h 127.0.0.1 -W -f NoeudPrincipal.LDIF
            
-           
+
+:Remplissage d'exemple:           
+  Une fois les noeuds crées j'ai un fichiers exemple qui remplit l'ensemble de ces noeuds avec un IUT et un Administrateur. Vous pouvez le remplir via mon fichier dans BaseLdap/Exemple.LDIF en faisant : 
+  
+.. code-block:: shell
+    :linenos:
+          
+    sudo ldapadd -D "cn=admin, o=concours" -h 127.0.0.1 -W -f Exemple.LDIF
+    
+
+  
 Démarrage
 ---------
 
