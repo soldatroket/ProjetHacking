@@ -218,7 +218,7 @@ cookies
 password
 --------
 
-.. class:: LdapTest
+.. class:: pass
 
    Description
    +++++++++++
