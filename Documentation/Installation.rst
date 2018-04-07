@@ -21,11 +21,11 @@ Ldap
   
     Ouvrez un terminal est installé le paquet suivant :
   
-    .. code-block::
-        :linenos:
+.. code-block::
+    :linenos:
    
-        sudo apt-get install slapd
-        sudo apt-get install ldap-utils
+    sudo apt-get install slapd
+    sudo apt-get install ldap-utils
       
     .. warning::
             Lors de l'installation de slapd vous allé ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
@@ -36,10 +36,10 @@ Ldap
   
     Pour Démarré votre annuaire il vous suffit de faire :
     
-      .. code-block:: shell
-          :linenos:
+.. code-block:: shell
+    :linenos:
           
-          sudo service slapd start
+    sudo service slapd start
         
        
 Sql
