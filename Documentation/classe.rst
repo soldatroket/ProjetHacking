@@ -248,6 +248,8 @@ password
       Pass=Utils.password.pass()
       Pass.GeneratePass("jean.paul@gmail.com")
       
+.. seealso:: L'appel de cette méthode entraine l'appel de la méthode suivante *SendPass*.
+      
 .. method:: pass.SendPass(mail, password)
 
    Cette méthode nous permet d'envoyé un mot de passe à un mail donné
@@ -264,3 +266,5 @@ password
    
       Pass=Utils.password.pass()
       Pass.SendPass("jean.paul@gmail.com", "toto")
+      
+.. seealso:: Cette méthode et uniquement appelé par la méthode GeneratePass(). Il est déconseillé d'appelé cette méthode directement
