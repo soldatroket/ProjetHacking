@@ -18,7 +18,7 @@ Voilà une liste qui définit toute les étapes :
 Ldap
 ====
 
-Dans notre projet on utilise la Version 3 du protocol Ldap. 
+Dans notre projet on utilise la **Version 3** du protocol Ldap. 
   
 ------------------  
   
@@ -56,8 +56,8 @@ Sql
 
 --------------
 
-  Installation
---------------
+Installation
+------------
 
   Ouvrez un terminal et inscrivez ceci :
     
@@ -68,3 +68,22 @@ Sql
           
 .. warning::
     Vous allez ensuite être invité à rentré un mot de passe. Il est très important il ne faut pas l'oublié!
+    
+---------------
+
+Démarrage
+---------
+
+    Pour Démarré votre annuaire il vous suffit de faire :
+    
+.. code-block:: shell
+    :linenos:
+          
+    sudo service mysql start
+    
+----------------
+
+Apache
+======
+
+  Nous allons utilisé la derniére version d'apache : **2.7**
