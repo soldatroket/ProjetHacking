@@ -37,7 +37,16 @@ Installation
 
 .. warning::
             Lors de l'installation de slapd vous allé ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
-           
+            
+Une fois l'annuaire installé vous allé de voir le remplir, pour ce faire vous devez tout d'abord créer une nouvelle base.
+J'ai mit à disposition le fichier de ma base qui se trouve dans BaseLDap/DB.LDIF. Ils vous restera ensuite plus qu'a éxecuté le commande si dessous.
+
+.. literalinclude:: ./BaseLdap/DB.LDIF
+
+.. code-block:: shell
+    :linenos:
+          
+    sudo ldapadd -Y EXTERNAL -H ldapi:/// -f <Votre fichier>
            
            
 Démarrage
