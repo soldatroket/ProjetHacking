@@ -19,11 +19,16 @@ Installation
   
   Ouvrez un terminal est installé le paquet suivant :
   
-  .. code-block:: python
+  .. code-block:: shell
       :linenos:
    
       sudo apt-get install slapd
       
   .. warning::
         Vous allé ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
+        
+        
+       
+Sql
+===
   
