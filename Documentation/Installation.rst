@@ -1,6 +1,6 @@
-############
+###############
 Préinstallation
-############
+###############
 
 Vous allez installé et configuré l'ensemble des composants permettant l'hébérgement du projet.
 
@@ -57,7 +57,7 @@ Sql
 
 Aide pour l'installation : https://doc.ubuntu-fr.org/mysql
 
---------------
+
 
 Installation
 ------------
@@ -72,7 +72,7 @@ Installation
 .. warning::
     Vous allez ensuite être invité à rentré un mot de passe. Il est très important il ne faut pas l'oublié!
     
----------------
+
 
 Démarrage
 ---------
@@ -92,7 +92,7 @@ Apache
   Nous allons utilisé la derniére version d'apache : **2.7**
   Aide pour l'installation : https://doc.ubuntu-fr.org/apache
   
--------------------
+
 
 Installation
 ------------
@@ -104,7 +104,7 @@ Installation
         
     sudo apt install mysql-server
     
-------------------
+
 
 Démarrage
 ---------
