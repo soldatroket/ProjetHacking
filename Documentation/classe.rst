@@ -205,6 +205,8 @@ LdapTest
    
 .. warning:: Cette fonction est obsolète et inutile, je conseille de ne pas l'utilisé.
 
+---------------------------
+
 SqlTest
 -------
 
