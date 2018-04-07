@@ -87,3 +87,31 @@ Apache
 ======
 
   Nous allons utilisé la derniére version d'apache : **2.7**
+  
+-------------------
+
+Installation
+------------
+
+  Ouvrez un terminal et inscrivez ceci pour lancé l'installation de votre server apache :
+    
+.. code-block:: shell
+    :linenos:
+        
+    sudo apt install mysql-server
+    
+------------------
+
+Démarrage
+---------
+
+.. note:: Par défaut, le serveur apache se lance automatiquement lors de son installation mais aussi à l'allumage de la machine.
+
+  Pour démarré le serveur rentré ceci dans un terminal :
+  
+.. code-block:: shell
+    :linenos:
+    
+    sudo service apache2 start
+    
+.. note:: Si votre serveur est bien démarré vous devriez avoir une page d'acceuil qui s'affiche en tapant *127.0.0.1* dans un navigateur
