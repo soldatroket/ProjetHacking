@@ -11,7 +11,7 @@ Voilà une liste qui définit toute les étapes :
 - `Apache`_
 - `Modules`_
 
-  Vous allé donc voir l'ensemble de ces composants
+  Vous allez donc voir l'ensemble de ces composants
   
 ---------------  
 
@@ -22,7 +22,7 @@ Dans notre projet on utilise la **Version 3** du protocol Ldap.
 Aide pour l'installation : https://doc.ubuntu-fr.org/slapd
   
 ------------------  
-  
+
 Installation
 ------------  
 
