@@ -193,7 +193,17 @@ LdapTest
    
       LdapTest=Utils.ldapp.LdapTest
       LdapTest.Modify("jean", "mail", "jean.paul@gmail.com"
+      
+.. method:: LdapTest.GetDN(dn, usr)
 
+   Cette méthode nous permet de retourné le DN d'une réponse
+   
+   :param str dn: Noeud de base dans lequelle on éffectue la recherche.
+   :param str usr: Pseudonyme du membre
+   :return: *DN de la réponse*
+   :rtype: *str*
+   
+.. warning:: Cette fonction est obselête et inutile, je conseille de ne pas l'utilisé.
 
 SqlTest
 -------
