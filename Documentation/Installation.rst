@@ -19,7 +19,7 @@ Ldap
 ====
 
 Dans notre projet on utilise la **Version 3** du protocol Ldap.
-.. _Aide: https://doc.ubuntu-fr.org/slapd
+Aide pour l'installation : https://doc.ubuntu-fr.org/slapd
   
 ------------------  
   
@@ -55,6 +55,8 @@ Démarrage
 Sql
 ===
 
+Aide pour l'installation : https://doc.ubuntu-fr.org/mysql
+
 --------------
 
 Installation
@@ -88,6 +90,7 @@ Apache
 ======
 
   Nous allons utilisé la derniére version d'apache : **2.7**
+  Aide pour l'installation : https://doc.ubuntu-fr.org/apache
   
 -------------------
 
