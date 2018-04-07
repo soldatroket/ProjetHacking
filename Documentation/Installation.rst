@@ -4,14 +4,8 @@ Préinstallation
 
 Vous allez installé et configuré l'ensemble des composants permettant l'hébérgement du projet.
 
-Voilà une liste qui définit toute les étapes : 
-
-- `Ldap`_
-- `Sql`_
-- `Apache`_
-- `Modules`_
-
-  Vous allez donc voir l'ensemble de ces composants
+.. contents:: liste qui définit toute les étapes : 
+   :depth: 2
   
 ---------------  
 
