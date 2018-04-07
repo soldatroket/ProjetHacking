@@ -15,11 +15,12 @@ Voilà une liste qui définit toute les étapes :
 Ldap
 ====
 
-  Dans notre projet on utilise la Version 3 du protocol Ldap.
+Dans notre projet on utilise la Version 3 du protocol Ldap.
   
-  *Installation*
-  
-    Ouvrez un terminal est installé le paquet suivant :
+Installation
+------------  
+
+Ouvrez un terminal est installé le paquet suivant :
   
 .. code-block::
     :linenos:
@@ -34,8 +35,9 @@ Ldap
     
 .. _Aide:: https://doc.ubuntu-fr.org/slapd
             
-  *Démarrage*
-  
+Démarrage
+---------
+
     Pour Démarré votre annuaire il vous suffit de faire :
     
 .. code-block:: shell
@@ -47,14 +49,15 @@ Ldap
 Sql
 ===
 
-  *Insatallation*
-  
-    Ouvrez un terminal et inscrivez ceci :
+Installation
+------------
+
+  Ouvrez un terminal et inscrivez ceci :
     
-      .. code-block:: shell
-          :linenos:
+.. code-block:: shell
+    :linenos:
         
-          sudo apt install mysql-server
+    sudo apt install mysql-server
           
-      .. warning::
-            Vous allé ensuite être invité à rentré un mot de passe. Il est très important il ne faut pas l'oublié!
+.. warning::
+    Vous allé ensuite être invité à rentré un mot de passe. Il est très important il ne faut pas l'oublié!
