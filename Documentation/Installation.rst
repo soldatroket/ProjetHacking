@@ -22,7 +22,7 @@ Installation
 
 Ouvrez un terminal est installé le paquet suivant :
   
-.. code-block::
+.. code-block:: shell
     :linenos:
    
     sudo apt-get install slapd
