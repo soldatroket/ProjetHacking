@@ -1,0 +1,13 @@
+dn: ou=M2M,o=iut,o=concours
+objectClass: organizationalUnit
+ou: M2M
+
+dn: cn=adminm2m,ou=people,o=concours
+objectClass: inetOrgPerson
+cn: admin
+sn: adminM2M
+employeeType: Admin
+mail: admin@yopmail.com
+secretary: ou=M2M,o=iut,o=concours
+userPassword:: ZDAzM2UyMmFlMzQ4YWViNTY2MGZjMjE0MGFlYzM1ODUwYzRkYTk5Nw==
+

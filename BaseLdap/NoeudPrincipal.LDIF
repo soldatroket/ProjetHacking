@@ -1,0 +1,11 @@
+dn: o=concours
+objectClass: organization
+o: concours
+
+dn: ou=people,o=concours
+objectClass: organizationalUnit
+ou: people
+
+dn: o=iut,o=concours
+objectClass: organizationalUnit
+o=iut
