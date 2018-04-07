@@ -18,7 +18,7 @@ Ldap
 Dans notre projet on utilise la Version 3 du protocol Ldap.
   
   Installation
-  ------------  
+--------------  
 
   Ouvrez un terminal est installé le paquet suivant :
   
@@ -33,7 +33,7 @@ Dans notre projet on utilise la Version 3 du protocol Ldap.
             Lors de l'installation de slapd vous allé ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
             
   Démarrage
-  ---------
+-----------
 
     Pour Démarré votre annuaire il vous suffit de faire :
     
