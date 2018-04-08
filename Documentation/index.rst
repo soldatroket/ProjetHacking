@@ -11,7 +11,7 @@ Ceci est la documentation d'un projet tuteurée dont le sujet est de réalisé u
 Télécharger le!
 ---------------
 
-Le code source peut être obtenue via Git::
+Le projet peut être obtenue via Git::
 
     git clone https://github.com/soldatroket/ProjetHacking
 
