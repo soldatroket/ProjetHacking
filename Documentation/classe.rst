@@ -427,6 +427,51 @@ SqlTest
 cookies
 -------
 
+.. class:: cookies
+
+   Description
+   +++++++++++
+
+       Cette classe nous permet de **d'écrire et de lire des cookies** dans un navigateur.
+       Avant tout il vous faut invoqué la classe si vous souhaitez l'utilisé.
+       Pour ce faire, vous faite :
+
+.. code-block:: python
+   :linenos:
+   
+   LdapTest=Utils.cookies.cookies()
+   
+.. decoratormethod:: SQLTest.SetCookie(cn, memberof, DNmemberof,DNiut,status)
+   
+   Cette méthode permet d'écrire les cookies nécessaire los de la connexion d'un utilisateur.
+   Les cookies inscrits lors de la connexion sont :
++----------------+-----------------------------+
+| Nom du cookie  | Déscription                 |
++================+=============================+
+| name           | Pseudonyme du membre        |
++----------------+-----------------------------+
+| status         | Status du membre:           |
+|		 |  Admin ou student           |
++----------------+-----------------------------+
+| DNteamName     | DN de l'équipe du membre    |
++----------------+-----------------------------|
+| DNiut          | DN de l'iut liée au membre  |
++----------------+-----------------------------+
+| teamName	 |  Nom de l'équipe du membre  |
++----------------+-----------------------------+   
+   :param str Old: Correspond à l'ancien nom de la table.
+   :param str New: Correspond au nouveau nom de la table.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      sqlDB=Utils.sql.SQLTest("concours")
+      verifQ=sqlDB.RenameTable("equipe", "team")  
+
 -------------------------------
 
 password
