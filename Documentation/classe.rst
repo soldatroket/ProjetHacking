@@ -441,26 +441,32 @@ cookies
    
    LdapTest=Utils.cookies.cookies()
    
-.. decoratormethod:: SQLTest.SetCookie(cn, memberof, DNmemberof,DNiut,status)
+.. decoratormethod:: cookies.SetCookie(cn, memberof, DNmemberof,DNiut,status)
    
    Cette méthode permet d'écrire les cookies nécessaire los de la connexion d'un utilisateur.
    Les cookies inscrits lors de la connexion sont :
-+----------------+-----------------------------+
-| Nom du cookie  | Déscription                 |
-+================+=============================+
-| name           | Pseudonyme du membre        |
-+----------------+-----------------------------+
-| status         | Status du membre:           |
-|		 |  Admin ou student           |
-+----------------+-----------------------------+
-| DNteamName     | DN de l'équipe du membre    |
-+----------------+-----------------------------|
-| DNiut          | DN de l'iut liée au membre  |
-+----------------+-----------------------------+
-| teamName	 |  Nom de l'équipe du membre  |
-+----------------+-----------------------------+   
-   :param str Old: Correspond à l'ancien nom de la table.
-   :param str New: Correspond au nouveau nom de la table.
++------------------+-----------------------------+
+| Nom du cookie    | Description                 |
++==================+=============================+
+| name             | Pseudonyme du membre        |
++------------------+-----------------------------+
+| status           | Status du membre:           |
+|		   |  Admin ou student           |
++------------------+-----------------------------+
+| DNteamName       | DN de l'équipe du membre    |
++------------------+-----------------------------|
+| DNiut            | DN de l'iut liée au membre  |
++------------------+-----------------------------+
+| teamName	   |  Nom de l'équipe du membre  |
++------------------+-----------------------------+   
+| session          | Identifiant unique          |
++------------------+-----------------------------+
+
+   :param str cn: Correspond au pseudonyme du membre.
+   :param str memberof: Correspond au nom de l'équpe du membre.
+   :param str DNmemberof: Correspond au DN de l'équipe de membre.
+   :param str DNiut: Correspond au DN de l'iut rataché au membre.
+   :param str status: Correspond au status du membre (*admin* ou *student*).
    :return: *None*
    :rtype: *None*
    
@@ -469,8 +475,53 @@ cookies
    .. code-block:: python
       :linenos:
    
-      sqlDB=Utils.sql.SQLTest("concours")
-      verifQ=sqlDB.RenameTable("equipe", "team")  
+      cookie=Utils.cookies.cookies()
+      cookie.SetCookie("paul","bg","cn=bg,ou=M2M,o=iut,o=concours","ou=M2M,o=iut,o=concours","student")
+      
+.. decoratormethod:: cookies.ReadSession(cookieName)
+   
+   Cette méthode permet de lire un cookie via son nom et de le retourné.
+   
+   :param str cookieName: Correspond au nom du cookie (voir tableau du dessus).
+   :return: *Retourne la valeur du cookie*
+   :rtype: *str*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      cookie=Utils.cookies.cookies()
+      pseudo=cookie.ReadSession("name")
+      
+.. decoratormethod:: cookies.ResetSession()
+   
+   Cette méthode permet de supprimé l'ensemble des cookies inscrit dans le navigateur (généralement utilisé lors d'une déconnexion).
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      cookie=Utils.cookies.cookies()
+      cookie.ResetSession()
+      
+.. decoratormethod:: cookies.VerifAdmin(token)
+   
+   Cette méthode permet de vérfié la validité d'un token liée à un administrateur.
+   
+   :param str token: Correspond au token(numéro de session) de l'utilisateur.
+   :return: *Retourne True s'il est valide et False au contraire*
+   :rtype: *bool*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      cookie=Utils.cookies.cookies()
+      cookie.VerifAdmin("123817353545231")
+
 
 -------------------------------
 
