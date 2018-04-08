@@ -4,7 +4,7 @@ Préinstallation
 
 Vous allez installé et configuré l'ensemble des composants permettant l'hébérgement du projet.
 
-.. contents:: liste qui définit toute les étapes : 
+.. contents:: liste des différentes étapes : 
    :depth: 2
   
 ---------------  
@@ -30,17 +30,17 @@ Installation
       
 
 .. warning::
-            Lors de l'installation de slapd vous allé ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
+            Lors de l'installation de slapd vous allez ensuite être invité à rentré un mot de passe qui vous servira à configuré votre annuaire. Il est très important il ne faut pas l'oublié!
             
-Une fois l'annuaire installé vous allé de voir le remplir, pour ce faire vous devez tout d'abord créer une nouvelle base.
-J'ai mit à disposition le fichier de ma base qui se trouve dans BaseLdap/DB.LDIF. Ils vous restera ensuite plus qu'a éxecuté le commande si dessous.
+Une fois l'annuaire installé vous allez devoir le remplir, pour ce faire vous devez tout d'abord créer une nouvelle base.
+J'ai mit à disposition le fichier d'une base qui se trouve dans BaseLdap/DB.LDIF. Il vous restera ensuite plus qu'a éxecuté le commande si dessous afin de l'y ajouté.
 
 .. code-block:: shell
     :linenos:
           
     sudo ldapadd -Y EXTERNAL -H ldapi:/// -f <Votre fichier>
     
-Quand vous aurez crée votre base, il faudrat y mettre les noeuds principaux du projet qui ce trouve dans le fichier BaseLdap/NoeudPrincipal.LDIF grâce à la commande : 
+Quand vous aurez crée votre base, il faudrat y mettre les noeuds principaux du projet qui ce trouve dans le fichier BaseLdap/NoeudPrincipal.LDIF, ajouter le fichier grâce à la commande : 
 
 .. code-block:: shell
     :linenos:
@@ -49,7 +49,7 @@ Quand vous aurez crée votre base, il faudrat y mettre les noeuds principaux du 
            
 
 :Remplissage d'exemple:           
-  Une fois les noeuds crées j'ai un fichiers exemple qui remplit l'ensemble de ces noeuds avec un IUT et un Administrateur. Vous pouvez le remplir via mon fichier dans BaseLdap/Exemple.LDIF en faisant : 
+  Une fois les noeuds crées j'ai un fichier exemple qui remplit l'ensemble de ces noeuds avec un IUT et un Administrateur. Vous pouvez aussi la remplir via le fichier dans BaseLdap/Exemple.LDIF en faisant : 
   
 .. code-block:: shell
     :linenos:
@@ -115,7 +115,7 @@ Apache
 Installation
 ------------
 
-  Ouvrez un terminal et inscrivez ceci pour lancé l'installation de votre server apache :
+  Ouvrez un terminal et inscrivez ceci pour lancé l'installation de votre serveur apache :
     
 .. code-block:: shell
     :linenos:
@@ -136,4 +136,4 @@ Pour démarré le serveur rentré ceci dans un terminal :
     
     sudo service apache2 start
     
-.. note:: Si votre serveur est bien démarré vous devriez avoir une page d'acceuil qui s'affiche en tapant *127.0.0.1* dans un navigateur
+.. note:: Si votre serveur à bien démarré vous devriez avoir une page d'acceuil qui s'affiche en tapant *127.0.0.1* dans un navigateur
