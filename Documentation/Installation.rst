@@ -90,7 +90,10 @@ Installation
 .. warning::
     Vous allez ensuite être invité à rentré un mot de passe. Il est très important il ne faut pas l'oublié!
     
-    Une fois votre base mySQL installé je vous conseille d'installé par la suite le module `phpmyadmin`_. 
+Une fois votre base mySQL installé je vous conseille d'installé par la suite le module `phpmyadmin`_.
+Vous trouverez ensuite dans le dossier BaseSQL un fichier nommé DB.sql, il contient l'ensemble des tables par défaut du projet.
+Il faudrat que vous l'importié dans la base mySQL via phpmyadmin. 
+(**Import -> Fichier à importer**)
     
 
 
@@ -160,5 +163,7 @@ phpmyadmin
     sudo apt-get install phpmyadmin
     
 .. seealso:: Vous aurez besoin içi du mot de passe de votre base mySQL!
+
+Une fois phpmyadmin installé vous devriez pouvoir y allé via *127.0.0.1/phpmyadmin*
    
    
