@@ -90,6 +90,8 @@ Installation
 .. warning::
     Vous allez ensuite être invité à rentré un mot de passe. Il est très important il ne faut pas l'oublié!
     
+    Une fois votre base mySQL installé je vous conseille d'installé par la suite le module `phpmyadmin`_. 
+    
 
 
 Démarrage
@@ -137,3 +139,26 @@ Pour démarré le serveur rentré ceci dans un terminal :
     sudo service apache2 start
     
 .. note:: Si votre serveur à bien démarré vous devriez avoir une page d'acceuil qui s'affiche en tapant *127.0.0.1* dans un navigateur
+
+---------------------
+
+Modules
+=======
+
+phpmyadmin
+----------
+
+   Le module phpmyamdin nous permettra d'amdinistrer la base mySQL par interface graphique.
+   
+   Aide pour l'installation : https://doc.ubuntu-fr.org/phpmyadmin
+   
+   Pour installé ce module vous devez tout d'abord avoir installé la base mySQL. Ensuite vous devez inscrire ceci dans un terminal:
+   
+.. code-block:: shell
+    :linenos:
+    
+    sudo apt-get install phpmyadmin
+    
+.. seealso:: Vous aurez besoin içi du mot de passe de votre base mySQL!
+   
+   
