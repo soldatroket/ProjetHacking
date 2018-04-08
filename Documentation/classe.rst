@@ -224,22 +224,20 @@ SqlTest
    
    Password=Utils.sql.SQLTest()
    
-.. decoratormethod:: SQLTest.init(db)
+.. decoratormethod:: SQLTest.__init__(db)
 
-   Cette méthode nous permet de généré un mot de passe et l'envoye automatiquement à un email
+   Ce constructeur de la classe SQLTest permet de définir la base utilisé de base.
    
-   :param str mail: Correspond au mail auquelle ont envoye le mot de passe.
-   :return: *Renvoye le mot de passe généré*
-   :rtype: *str*
+   :param str db: Correspond au nom de la base utilisé.
+   :return: *None*
+   :rtype: *None*
    
 **Exemple :** 
    
    .. code-block:: python
       :linenos:
    
-      Pass=Utils.password.pass()
-      Pass.GeneratePass("jean.paul@gmail.com")
-   
+      sqlTest=Utils.sql.SQLTest("concours")
 
 cookies
 -------
