@@ -226,7 +226,7 @@ SqlTest
    
 .. decoratormethod:: SQLTest.__init__(db)
 
-   Ce constructeur de la classe SQLTest permet de définir la base utilisé de base.
+   Ce constructeur de la classe SQLTest permet de définir la base de donnée utilisé par défaut.
    
    :param str db: Correspond au nom de la base utilisé.
    :return: *None*
@@ -238,6 +238,87 @@ SqlTest
       :linenos:
    
       sqlTest=Utils.sql.SQLTest("concours")
+      
+.. decoratormethod:: SQLTest.SetDB(db)
+
+   Cette méthode permet de (re)définir la base de donnée utilisé.
+   
+   :param str db: Correspond au nom de la base utilisé.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      sqlTest=Utils.sql.SQLTest()
+      sqlTest.SetDB("concours")
+      
+.. decoratormethod:: SQLTest.Connection()
+
+   Cette méthode est appelé uniquement par la classe SQLTest elle même. Elle permet de se connecté à une base mySQL et retourné une connexion
+   
+   :return: *Connector*
+   :rtype: *Connector*
+
+.. decoratormethod:: SQLTest.Search(Select, From, Where)
+
+   Cette classe permet d'effectué une recherche dans la base mySQL.
+   
+   :param str Select: Correspond au attributs recherché, peut être multiple en les espaçant d'une virgule : *,*
+   :param str From: Correspond au nom de la table dans lequel il faut recherché les attributs.
+   :param str Where: Correspond à la condition de recherche. Mettre "None" pour aucun paramêtre de recherche
+   :return: *Retourne le résultat sous forme de tableau*
+   :rtype: *list*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      sqlTest=Utils.sql.SQLTest("concours")
+      recherche=sqlTest.Search("IDcat, NomCat","categorie","ID = 2")
+      
+.. decoratormethod:: SQLTest.AddEntry(table, attr, value)
+
+   Cette méthode permet d'ajouté une entrée dans la base mySQL.
+   
+   :param str table: Correspond à la table dans laquel ont souhaite rajouté une entrée.
+   :param str attr: Correspond au nom de l'attribut auquel ont rajoute l'entrée. Peut être multiple en les espaçant d'une virgule
+   :param tuple value: Correspond à la valeur de l'attribut. Doit être dans un tuple et dans le même ordre que les attributs de la variable attr
+   :return: *Retourne le résultat sous forme de tableau*
+   :rtype: *list*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      sqlDB=Utils.sql.SQLTest("concours")
+      attr="Titre, Question, Reponse, Catégorie, Point, owner"
+		sqlDB.AddEntry("enigmes", attr, ("Mer", "j", "jaune", "poisson", "dur", "paul"))
+      
+.. decoratormethod:: SQLTest.UpdateEntry(table, attr, value, where)
+   
+   Cette méthode permet de mettre à jour une entrée dans la base mySQL.
+   
+   :param str table: Correspond à la table dans laquel ont souhaite mettre à jour l'entrée.
+   :param tuple attr: Correspond au nom de l'attribut auquel ont rajoute l'entrée doit ce trouvé dans un tuple et peut donc être multiple.
+   :param tuple value: Correspond à la valeur de l'attribut il doit aussi être dans un tuple et dans le même ordre que la variable attr.
+   :param tuple where: Correspond à la condition de la ligne à laquel ont souhaite modifié l'entrée. Doit ce trouvé dan sun tuple. Le premier élément correspond à l'attribut. Et le deuxième élément à la valeur que doit être égal l'attribut.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      sqlDB=Utils.sql.SQLTest("concours")
+      fn="cat.jpeg"
+		sqlDB.UpdateEntry("enigmes", ("Fichier",), (fn,), ("ID", "2"))
+
 
 cookies
 -------
