@@ -91,11 +91,9 @@ Installation
     Vous allez ensuite être invité à rentré un mot de passe. Il est très important il ne faut pas l'oublié!
     
 Une fois votre base mySQL installé je vous conseille d'installé par la suite le module `phpmyadmin`_.
-Vous trouverez ensuite dans le dossier BaseSQL un fichier nommé DB.sql, il contient l'ensemble des tables par défaut du projet.
-Il faudrat que vous l'importié dans la base mySQL via phpmyadmin. 
-(**Import -> Fichier à importer**)
-    
-
+Vous allez ensuite devoir créez deux nouvelles bases de données : **concours** et **equipes**
+Vous trouverez ensuite dans le dossier BaseSQL un fichier nommé concours.sql, il contient l'ensemble des tables par défaut pour la table concours. Vous allez devoir l'importé.
+(**concours -> Import -> Fichier à importer -> concours.sql**)
 
 Démarrage
 ---------
