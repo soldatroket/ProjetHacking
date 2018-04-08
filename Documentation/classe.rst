@@ -407,7 +407,7 @@ SqlTest
 
 .. decoratormethod:: SQLTest.RenameTable(Old, New)
    
-   Cette méthode permet de rennomé une table dans la base mySQL.
+   Cette méthode permet de rennomer une table dans la base mySQL.
    
    :param str Old: Correspond à l'ancien nom de la table.
    :param str New: Correspond au nouveau nom de la table.
