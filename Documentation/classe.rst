@@ -24,7 +24,7 @@ LdapTest
    
    
    
-.. method:: LdapTest.Connection(dn,mdp)
+.. decoratormethod:: LdapTest.Connection(dn,mdp)
 
    Cette méthode est utilisé uniquement par le script ldapp.py lui même.
    Elle permet d'initialisé une connection avec un annuaire Ldap et retourne un objet **LdapObject**
@@ -43,7 +43,7 @@ LdapTest
 
 
 
-.. method:: LdapTest.Search(baseDN, searchScope, retrieveAttributes, searchFilter, MultResult, returnDN)
+.. decoratormethod:: LdapTest.Search(baseDN, searchScope, retrieveAttributes, searchFilter, MultResult, returnDN)
 
    Cette méthode est utilisé pour réaliser des recherches dans l'annuaire Ldap.
    
@@ -66,7 +66,7 @@ LdapTest
       LdapTest=Utils.ldapp.LdapTest
       result=LdapTest.Search("ou=M2M,o=iut,o=concours", LDAP.SCOPE_SUBTREE, ["cn"], "objectclass=inetorgperson", True, False)
 
-.. method:: LdapTest.AddMember(cn, sn, mail, DNiut, employee, password)
+.. decoratormethod:: LdapTest.AddMember(cn, sn, mail, DNiut, employee, password)
 
    Cette méthode est utilisé pour ajouté un membre dans dans l'annuaire Ldap sous le noeud *ou=people,o=concours*.
    
@@ -87,7 +87,7 @@ LdapTest
       LdapTest=Utils.ldapp.LdapTest
       LdapTest.AddMember("paul", "dupont", "paul.dupont@yopmail.com", "ou=M2M,o=iut,o=concours", "Admin", "ZedkfjvDFg")
 
-.. method:: LdapTest.DelMember(dn)
+.. decoratormethod:: LdapTest.DelMember(dn)
 
    Cette méthode est utilisé pour supprimé un membre de l'annuaire Ldap
    
@@ -103,7 +103,7 @@ LdapTest
       LdapTest=Utils.ldapp.LdapTest
       LdapTest.DelMember("cn=paul,ou=people,o=concours")
       
-.. method:: LdapTest.AddGroup(teamName, members, dnIUT, owner)
+.. decoratormethod:: LdapTest.AddGroup(teamName, members, dnIUT, owner)
 
    Cette méthode est utilisé pour ajouté une équipe dans l'annuaire Ldap.
    
@@ -122,7 +122,7 @@ LdapTest
       LdapTest=Utils.ldapp.LdapTest
       LdapTest.AddGroup("LesHackeursDu92", ["jean","pierre","paul"], "ou=M2M,o=iut,o=concours", "henry")
       
-.. method:: LdapTest.ModifyGroup(DNiut ,TeamName, NewTeamName, NewMember)
+.. decoratormethod:: LdapTest.ModifyGroup(DNiut ,TeamName, NewTeamName, NewMember)
 
    Cette méthode est utilisé pour modifié une équipe dans l'annuaire Ldap.
    
@@ -141,7 +141,7 @@ LdapTest
       LdapTest=Utils.ldapp.LdapTest
       LdapTest.ModifyGroup("ou=M2M,o=iut,o=concours", "LesHackeurs92", "LesBG92",["cn=paul,ou=people,o=concours","cn=roberto,ou=people,o=concours"])
 
-.. method:: LdapTest.Compare(dn, attr, value)
+.. decoratormethod:: LdapTest.Compare(dn, attr, value)
 
    Cette méthode est utilisé pour comparé l'annuaire Ldap.
    
@@ -159,7 +159,7 @@ LdapTest
       LdapTest=Utils.ldapp.LdapTest
       result=LdapTest.Compare("cn=paul,ou=people,o=concours", "userPassword", "ZlDFgfdgdLGF")
       
-.. method:: LdapTest.AddScore(value, DNteam)
+.. decoratormethod:: LdapTest.AddScore(value, DNteam)
 
    Cette méthode est utilisé pour rajouté un score à une équipe de l'annuaire Ldap.
    
@@ -176,7 +176,7 @@ LdapTest
       LdapTest=Utils.ldapp.LdapTest
       LdapTest.AddScore(12, "LesBG92")
 
-.. method:: LdapTest.Modify(cn, attr, value)
+.. decoratormethod:: LdapTest.Modify(cn, attr, value)
 
    Cette méthode nous permet de modifié un attribut d'un membre
    
@@ -194,7 +194,7 @@ LdapTest
       LdapTest=Utils.ldapp.LdapTest
       LdapTest.Modify("jean", "mail", "jean.paul@gmail.com"
       
-.. method:: LdapTest.GetDN(dn, usr)
+.. decoratormethod:: LdapTest.GetDN(dn, usr)
 
    Cette méthode nous permet de retourné le DN d'une réponse
    
@@ -263,7 +263,7 @@ password
    
    Password=Utils.password.pass()
       
-.. method:: pass.GeneratePass(mail)
+.. decoratormethod:: pass.GeneratePass(mail)
 
    Cette méthode nous permet de généré un mot de passe et l'envoye automatiquement à un email
    
@@ -281,7 +281,7 @@ password
       
 .. seealso:: L'appel de cette méthode entraine l'appel de la méthode suivante *SendPass*.
       
-.. method:: pass.SendPass(mail, password)
+.. decoratormethod:: pass.SendPass(mail, password)
 
    Cette méthode nous permet d'envoyé un mot de passe à un mail donné
    
