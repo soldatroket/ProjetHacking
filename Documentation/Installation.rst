@@ -98,7 +98,7 @@ Vous trouverez ensuite dans le dossier BaseSQL un fichier nommé concours.sql, i
 Démarrage
 ---------
 
-    Pour Démarré votre annuaire il vous suffit de faire :
+    Pour Démarré votre serveur il vous suffit de faire :
     
 .. code-block:: shell
     :linenos:
@@ -124,6 +124,8 @@ Installation
     :linenos:
         
     sudo apt install mysql-server
+    
+Une fois apache installé il faut lui authorisé l'éxécution de script python pour ce faire suivé les différentes étapes présentes dans la documentation technique.
     
 
 
