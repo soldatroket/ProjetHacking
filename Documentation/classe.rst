@@ -445,22 +445,22 @@ cookies
    
    Cette méthode permet d'écrire les cookies nécessaire los de la connexion d'un utilisateur.
    Les cookies inscrits lors de la connexion sont :
-+------------------+-----------------------------+
-| Nom du cookie    | Description                 |
-+==================+=============================+
-| name             | Pseudonyme du membre        |
-+------------------+-----------------------------+
-| status           | Status du membre:           |
-|		   |  Admin ou student           |
-+------------------+-----------------------------+
-| DNteamName       | DN de l'équipe du membre    |
-+------------------+-----------------------------+
-| DNiut            | DN de l'iut liée au membre  |
-+------------------+-----------------------------+
-| teamName	   |  Nom de l'équipe du membre  |
-+------------------+-----------------------------+   
-| session          | Identifiant unique          |
-+------------------+-----------------------------+
+	+------------------+-----------------------------+
+	| Nom du cookie    | Description                 |
+	+==================+=============================+
+	| name             | Pseudonyme du membre        |
+	+------------------+-----------------------------+
+	| status           | Status du membre:           |
+	|		   |  Admin ou student           |
+	+------------------+-----------------------------+
+	| DNteamName       | DN de l'équipe du membre    |
+	+------------------+-----------------------------+
+	| DNiut            | DN de l'iut liée au membre  |
+	+------------------+-----------------------------+
+	| teamName	   |  Nom de l'équipe du membre  |
+	+------------------+-----------------------------+   
+	| session          | Identifiant unique          |
+	+------------------+-----------------------------+
 
    :param str cn: Correspond au pseudonyme du membre.
    :param str memberof: Correspond au nom de l'équpe du membre.
