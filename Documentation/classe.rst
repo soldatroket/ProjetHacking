@@ -210,6 +210,37 @@ LdapTest
 SqlTest
 -------
 
+.. class:: SQLTest
+
+   Description
+   +++++++++++
+
+       Cette classe nous permet de **manipulé la base mySQL**.
+       Avant tout il vous faut invoqué votre classe si vous souhaitez l'utilisé.
+       Pour ce faire, vous faite :
+       
+.. code-block:: python
+   :linenos:
+   
+   Password=Utils.sql.SQLTest()
+   
+.. decoratormethod:: SQLTest.init(db)
+
+   Cette méthode nous permet de généré un mot de passe et l'envoye automatiquement à un email
+   
+   :param str mail: Correspond au mail auquelle ont envoye le mot de passe.
+   :return: *Renvoye le mot de passe généré*
+   :rtype: *str*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      Pass=Utils.password.pass()
+      Pass.GeneratePass("jean.paul@gmail.com")
+   
+
 cookies
 -------
 
