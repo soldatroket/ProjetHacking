@@ -317,8 +317,112 @@ SqlTest
    
       sqlDB=Utils.sql.SQLTest("concours")
       fn="cat.jpeg"
-		sqlDB.UpdateEntry("enigmes", ("Fichier",), (fn,), ("ID", "2"))
+      sqlDB.UpdateEntry("enigmes", ("Fichier",), (fn,), ("ID", "2"))
+		
+.. decoratormethod:: SQLTest.DelEntry(table, attr, value)
+   
+   Cette méthode permet de supprimé une entrée dans la base mySQL.
+   
+   :param str table: Correspond à la table dans laquel ont souhaite supprimé l'entrée.
+   :param str attr: Correspond au nom de l'attribut qui qui correpsond à la condition de suppression.
+   :param str value: Correspond à la valeur dont la variable attr doit être égal pour supprimé l'entrée.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      sqlDB=Utils.sql.SQLTest("concours")
+      sqlDB.DelEntry("equipe", "ID", "2")
+      
+.. decoratormethod:: SQLTest.CreateTeamTable(Name)
+   
+   Cette méthode permet de crée la table d'une équipe dans la base mySQL.
+   
+   :param str Name: Correspond au nom de l'équipe.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      sqlDB=Utils.sql.SQLTest("concours")
+      sqlDB.CreateTeamTable("bg")
+      
+.. decoratormethod:: SQLTest.DeleteTable(Name)
+   
+   Cette méthode permet de supprimé une table dans la base mySQL.
+   
+   :param str Name: Correspond au nom de la table.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      sqlDB=Utils.sql.SQLTest("concours")
+      sqlDB.DeleteTable("bg")
+      
+.. decoratormethod:: SQLTest.Compare(table, attr, where, value)
+   
+   Cette méthode permet de supprimé une table dans la base mySQL.
+   
+   :param str table: Correspond au nom de la table dans lequel il faut recherché l'attribut.
+   :param str attr: Correspond à l'attribut recherché.
+   :param str where: Correspond à la condition de recherche. Mettre "None" pour aucun paramêtre de recherche.
+   :param str or int value: Correspond à la valeur de comparaison.
+   :return: *Retourne True pour une comparaison vérifé et False pour une comparaison non vérifié*
+   :rtype: *bool*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      sqlDB=Utils.sql.SQLTest("concours")
+      verifR=sqlDB.Compare("enigmes", "reponse", "ID = 2", "42")
+      
+.. decoratormethod:: SQLTest.VerifQuestionTeam(teamName, ID)
+   
+   Cette méthode permet de vérifié si une équipe donné à répondue ou non à une énigme grâce à son ID.
+   
+   :param str teamName: Correspond au nom de l'équipe en question.
+   :param str ID: Correspond à l'ID de l'énigme à vérifié.
+   :return: *Retourne True si l'équipe n'y à pas répondue et False dans le cas contraire*
+   :rtype: *bool*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      sqlDB=Utils.sql.SQLTest("concours")
+      verifQ=sqlDB.VerifQuestionTeam("bg", "2")   
 
+.. decoratormethod:: SQLTest.RenameTable(Old, New)
+   
+   Cette méthode permet de rennomé une table dans la base mySQL.
+   
+   :param str Old: Correspond à l'ancien nom de la table.
+   :param str New: Correspond au nouveau nom de la table.
+   :return: *None*
+   :rtype: *None*
+   
+**Exemple :** 
+   
+   .. code-block:: python
+      :linenos:
+   
+      sqlDB=Utils.sql.SQLTest("concours")
+      verifQ=sqlDB.RenameTable("equipe", "team")  
+      
+-------------------------
 
 cookies
 -------
