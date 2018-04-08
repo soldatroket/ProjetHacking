@@ -26,12 +26,12 @@ Vous devez tout d’abord importer le Package nommé « **Utils** » qui vous im
       
       import Utils
 
-Une fois ceci fait vous pouvez appellez l'ensemble des classes de ces fichiers.
+Une fois ceci fait vous pouvez appeller l'ensemble des classes de ces fichiers.
 
 
 Template
 ========
-Le packetage « **Template** » contient des scripts de template pour les pages HTML
+Le package « **Template** » contient des scripts de template pour les pages HTML
 
 Pour pouvoir utilisés l'un de ces templates vous devez tout d'abord l'importer en faisant : 
 
