@@ -13,7 +13,7 @@ Télécharger le!
 
 Le projet peut être obtenue via Git::
 
-    git clone https://github.com/soldatroket/ProjetHacking
+    git clone https://github.com/soldatroket/ProjetHacking.git
 
 .. toctree::
    :maxdepth: 2
