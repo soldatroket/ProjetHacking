@@ -10,6 +10,8 @@ import Template
 import mysql.connector
 cgitb.enable()
 
+######################################################RECUPERATION DES COOKIES###########################################################################
+
 CookiesMod=Utils.cookies()
 SessionToken=CookiesMod.ReadSession("session")
 name=CookiesMod.ReadSession('name')
@@ -81,7 +83,7 @@ def Display(title, label, list, graph):
 
 ###########################################################TRAITEMENT FORMULAIRE########################################################################################
 
-if formulaire.getvalue("donnees"):
+if formulaire.getvalue("donnees"):						#On verifie que l'ont à bien reçu des données
 	choix=cgi.escape(formulaire.getvalue("donnees"))
 	if choix=="iut":
 		Liste=GetListeIut()
@@ -96,7 +98,7 @@ if formulaire.getvalue("donnees"):
         else:
                 graph="bar"
 	Display(Titre, Label, Liste, graph)
-else:
+else:										#Sinon on affiche les valeurs par défaut
 	Liste=GetListeIut()
 	Label="IUT"
 	Titre="Score par IUT"

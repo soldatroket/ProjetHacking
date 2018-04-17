@@ -14,6 +14,8 @@ cgitb.enable()
 
 formulaire = cgi.FieldStorage()
 
+#################################################RECUPERATION DES COOKIES##############################################
+
 CookiesMod=Utils.cookies()
 SessionToken=CookiesMod.ReadSession('session')
 name=CookiesMod.ReadSession('name')
@@ -42,11 +44,11 @@ if Status=="student" and teamName!="Pas de resultat":					#On verifie que le jou
 				LdapMod.AddScore(point[0][0], DNTeam)			#On ajoute ce score à l'équipe qui à répondue
 				sqlDB.SetDB("equipes")
 				sqlDB.AddEntry(teamName, "ID, IDQuestion", (0,ID))	#On inscrit sur la base SQL le fait que l'énigme est répondue à la question
-				Template.Error.Display("Bravo vous avez trouver", "enigmeliste.py")
+				Template.Error.Display("Bravo, tu à trouvé la bonne réponse :D", "enigmeliste.py")
 			else:
 				Template.Error.Display("Et non dommage :(", "enigme.py?ID="+ID)
 		else:
-			Template.Error.Display("Ton équipe a deja répondue a cette question....", "enigmeliste.py")
+			Template.Error.Display("Ton équipe à deja répondue à cette question....", "enigmeliste.py")
 	else:
 		Template.Error.Display("Erreur", "enigmeliste.py")
 else:

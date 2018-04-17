@@ -11,6 +11,7 @@ import Template
 import mysql.connector
 cgitb.enable()
 
+###########################################################RECUPERATIONS DES COOKIES#################################################################
 CookiesMod=Utils.cookies()
 SessionToken=CookiesMod.ReadSession("session")
 name=CookiesMod.ReadSession('name')
@@ -29,7 +30,7 @@ else:
 #####################################################################FONCTIONS##########################################################################
 
 def member():
-	#Fonction qui retourne les membres d'un IUT
+	#Fonction qui retourne les membres d'un IUT sous forme de tableau
 	LdapMod=Utils.ldapp.LdapTest()
 	baseDN = "ou=people,o=concours"
 	searchScope = ldap.SCOPE_SUBTREE
@@ -40,10 +41,10 @@ def member():
 
 #############################################################TRAITEMENT FORMULAIRE##################################################################
 
-if Status!="admin" or CookiesMod.VerifAdmin(SessionToken)==False: 				#On vérifie la personne est bioen un admin (cookie et token)
+if Status!="admin" or CookiesMod.VerifAdmin(SessionToken)==False: 				#Si la personne n'est pas un administrateur on la redirige
 	Template.Error.Display("ACCES INTERDIT", "menu.py")
 
-elif Status=="admin" and CookiesMod.VerifAdmin(SessionToken)==True:
+elif Status=="admin" and CookiesMod.VerifAdmin(SessionToken)==True:                            #On vérifie que la personne est bien un admin (cookie=admin et token valide)
 	print'Content-type: text/html'
 	print''
 
@@ -70,14 +71,14 @@ elif Status=="admin" and CookiesMod.VerifAdmin(SessionToken)==True:
     		<![endif]-->
 	</head>
 	<body>'''
-	Template.VerticalMenu.Display(name, teamName, Status, "administration")					#On affiche la barre vertical
+	Template.VerticalMenu.Display(name, teamName, Status, "administration")					#On affiche la barre de menu vertical
 	if TypeF=="member":
 		AllMember=member()
 		Template.GestionMembres.Display(AllMember)
 	
 	elif TypeF=="enigme":
 		sqlDB=Utils.SQLTest("concours")
-                rows = sqlDB.Search("ID, Titre, Question, Reponse, Catégorie, Point, Fichier, owner","enigmes","owner='"+name+"'")	#On récupére toutes les énigmes créer par l'administrateur connecté
+                rows = sqlDB.Search("ID, Titre, Question, Reponse, Catégorie, Point, Fichier, owner","enigmes","owner='"+name+"'")	#On récupére toutes les énigmes créer par l'administrateur connecter
 		Template.ShowEnigme.Display(rows)
 	
 	elif TypeF=="addenigme" and Status=="admin":
@@ -104,7 +105,7 @@ elif Status=="admin" and CookiesMod.VerifAdmin(SessionToken)==True:
 		searchScope = ldap.SCOPE_SUBTREE
        		retrieveAttributes = ['cn']
         	searchFilter = "objectclass=groupofnames"
-		equipe=LdapMod.Search(dnIUT, searchScope, retrieveAttributes, searchFilter, True, False)				#On récupére le nom de toutes les éqiupes d'un IUT
+		equipe=LdapMod.Search(dnIUT, searchScope, retrieveAttributes, searchFilter, True, False)				#On récupére le nom de toutes les équipes d'un IUT
 		Template.ShowEquipe.Display(equipe, dnIUT)
 
         elif TypeF=="addequipe":
@@ -125,10 +126,10 @@ elif Status=="admin" and CookiesMod.VerifAdmin(SessionToken)==True:
 		retrieveAttributes2 = ['cn']
                 searchFilter = "objectClass=groupOfNames"
 		searchFilter2 = "(&(secretary="+dnIUT+")(employeeType=student))"
-                DNTeamMembers=LdapMod.Search(dnEquipe, searchScope, retrieveAttributes, searchFilter, True, False)			#On récupére tout les membres d'une équipes
+                DNTeamMembers=LdapMod.Search(dnEquipe, searchScope, retrieveAttributes, searchFilter, True, False)			#On récupére tout les membres d'une équipe
 		TeamMembers=[]
 		for i in DNTeamMembers:													#On fait une boucle sur tout les membres
 			searchFilter3 = "(objectClass=inetOrgPerson)"
-			TeamMembers.append(LdapMod.Search(i, searchScope, retrieveAttributes2, searchFilter3, False, False))		#On ajoute dans le tableau TeamMembers le pseudo de chauqe membres(admin et joueur)
-		members=LdapMod.Search(baseDN, searchScope, retrieveAttributes2, searchFilter2, True, False)				#On ajoute dans le tableau members le pseudo de tout les joueurs
+			TeamMembers.append(LdapMod.Search(i, searchScope, retrieveAttributes2, searchFilter3, False, False))		#On ajoute dans le tableau TeamMember, le pseudo de chaque membres(admin et joueur)
+		members=LdapMod.Search(baseDN, searchScope, retrieveAttributes2, searchFilter2, True, False)				#On ajoute dans le tableau members le pseudo de tout les joueurs uniquement
 		Template.ModifEquipe.Display(formulaire.getvalue('name'), TeamMembers, members)

@@ -13,6 +13,8 @@ cgitb.enable()
 
 formulaire = cgi.FieldStorage()
 
+###########################################RECUPERATION DES ENIGMES##########################################################
+
 CookiesMod=Utils.cookies()
 SessionToken=CookiesMod.ReadSession("session")
 name=CookiesMod.ReadSession('name')
@@ -22,10 +24,10 @@ Status=CookiesMod.ReadSession('status')
 DNteam=CookiesMod.ReadSession('DNteamName')
 
 def Display():
-	if formulaire.getvalue("ID")!=None:
+	if formulaire.getvalue("ID")!=None:						#On vérifie que l'ont à bien rçu l'ID de l'énigme à aficher
 		id=cgi.escape(formulaire.getvalue("ID"))
 		sqlDB=Utils.SQLTest("concours")
-		rows = sqlDB.Search("ID, Titre, Question, Reponse, Catégorie, Point, Fichier","enigmes","ID="+id)
+		rows = sqlDB.Search("ID, Titre, Question, Reponse, Catégorie, Point, Fichier","enigmes","ID="+id)		#On récupére toutes les infos de l'énigme
 
 		print'Content-type: text/html'
 		print''
@@ -46,7 +48,7 @@ def Display():
         	<head>
         	<body>'''
 		if len(rows)!=0:
-			Template.VerticalMenu.Display(name, teamName, Status, "enigme")
+			Template.VerticalMenu.Display(name, teamName, Status, "enigme")					#On affiche le menu veritcal
 			print '''<div class="col-lg-10 text-center">
 					<div class="row">
 						<form method="post" action="verifenigme.py" class="col-lg-12">
@@ -59,7 +61,7 @@ def Display():
 								<input type="hidden" value="'''+str(rows[0][0])+'''" name="ID">
 								<input type="submit" value="Verifiez">
         	                               		</div>'''
-			if str(rows[0][6])!="None":
+			if str(rows[0][6])!="None":									#On regarde si on à un fichier avec l'énigme
 				print	'''		<div class="form-group">
 								<a href="/enigmes/'''+str(rows[0][0])+"/"+str(rows[0][6])+'''" download>
 									<button type="button" class="btn btn-primary">
@@ -73,8 +75,8 @@ def Display():
         	         	</div>
 			</div>'''
 		else:
-			Template.Error.Display("ERREUR : ENIGME NON TROUVER", "enigmeliste.py")
+			Template.Error.Display("ERREUR : ENIGME NON TROUVE", "enigmeliste.py")
 	else:
-		Template.Error.Display("AUCUNE ENIGME SELECTIONNER", "enigmeliste.py")
+		Template.Error.Display("AUCUNE ENIGME SELECTIONNE", "enigmeliste.py")
 
 Display()

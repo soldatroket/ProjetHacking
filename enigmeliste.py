@@ -11,6 +11,8 @@ import Template
 import mysql.connector
 cgitb.enable()
 
+###################################Récupération des cookies#######################################
+
 CookiesMod=Utils.cookies()
 name=CookiesMod.ReadSession('name')
 teamName=CookiesMod.ReadSession('teamName')
@@ -69,7 +71,7 @@ for i in categorie:											#On fait une boucle sur toutes les catégories
 				for rep in reponse:
 					if rep[0]==y[0]:
 						present=True
-				if present==True:
+				if present==True:							#Affiche un symabole validé à coter de l'énigme si l'ont y à repondue
 					print		'<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>'
 				else:
 					print           '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>'
