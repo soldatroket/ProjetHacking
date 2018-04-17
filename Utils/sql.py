@@ -6,9 +6,11 @@ import cgitb
 cgitb.enable()
 
 class SQLTest:
+	#Class qui nous permet de manipuler la base SQL
 	B2D = ""
 
 	def __init__(self, db):
+		#constructeur de la classe
 		self.B2D=db
 
 	def SetDB(self, db):
@@ -19,6 +21,7 @@ class SQLTest:
 		return conn
 
 	def Search(self, Select, From, Where):
+		#Fonction permetant d'effectué une recherche dans la base sQL
 		conn = self.Connection()
 		cursor = conn.cursor()
 		if(Where=="None" or Where==None):
@@ -35,6 +38,7 @@ class SQLTest:
 			conn.commit()
 
 	def AddEntry(self, table, attr, value):
+		#Focntion permettant d'ajouté une entrée das une table
 		conn = self.Connection()
 		cursor = conn.cursor()
 		val=""
@@ -54,6 +58,7 @@ class SQLTest:
 			print err
 
 	def UpdateEntry(self, table, attr, value, where):
+		#Fonction permettant de mettre à jour une entrée d'une table sql
 		conn = self.Connection()
 		cursor = conn.cursor()
 		val=""
@@ -76,6 +81,7 @@ class SQLTest:
 			print err
 
 	def DelEntry(self, table, attr, value):
+		#Fonction permettant de supprimé une entrée d'une table
 		conn = self.Connection()
 		cursor = conn.cursor()
 		query = ("DELETE FROM `"+table+"` WHERE "+attr+" = '"+value+"'")
@@ -87,6 +93,7 @@ class SQLTest:
 			print err
 
 	def CreateTeamTable(self, Name):
+		#Fonction permettat de crée une table pour une équipe
 		conn = self.Connection()
 		TableName="CREATE TABLE `"+Name+"`" 
 		Attrs=" ( `ID` INT(255) NOT NULL AUTO_INCREMENT, `IDQuestion` INT(255) NOT NULL , PRIMARY KEY (`ID`) )"
@@ -96,6 +103,7 @@ class SQLTest:
 		conn.commit()
 
 	def DeleteTable(self, Name):
+		#Fonction permetant de supprimé une table
 		conn = self.Connection()
 		cursor=conn.cursor()
 		query="DROP TABLE "+Name
@@ -103,6 +111,7 @@ class SQLTest:
 		conn.commit()
 
 	def Compare(self, table, attr, where, value):
+		#Fonction permettant de comparé une valeur avec la valeur d'un attribut présent dans une tbale
 		conn = self.Connection()
 		attrValue=self.Search(attr, table, where)
 		if attrValue[0][0]==value:
@@ -111,6 +120,7 @@ class SQLTest:
 			return False
 
 	def VerifQuestionTeam(self, teamName, ID):
+		#Fontion permettant de vérifé si une équie à deja répondue à une question ou non
 		conn = self.Connection()
 		rows = self.Search("IDQuestion", teamName, "IDQuestion = \'"+ID+"\'")
 		if len(rows)==1:
@@ -119,6 +129,7 @@ class SQLTest:
 			return True
 
 	def RenameTable(self, Old, New):
+		#Fonction permettant de rennomé une tbale
 		conn = self.Connection()
 		cursor = conn.cursor()
 		query = "ALTER TABLE "+Old+" rename "+New

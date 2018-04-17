@@ -10,7 +10,7 @@ class LdapTest:
 	#Class permettant de réaliser des opérations dans l'annuaire Ldap
 	def Connection(self, dn, mdp):
 		#Fonction qui permet de se connecter à un annuaire Ldap et retourne la connexion
-		l=ldap.initialize("ldap://lws.ovh")			#On initialise la connexion sur notre Ldap
+		l=ldap.initialize("ldap://127.0.0.1")			#On initialise la connexion sur notre Ldap
 		try:
 			l.protocol_version=ldap.VERSION3		#Définition de la version LDAP utilisé
 			l.simple_bind_s(dn, mdp)			#On se connecte à l'annuaire
@@ -21,7 +21,7 @@ class LdapTest:
 
 	def Search(self, baseDN, searchScope, retrieveAttributes, searchFilter, MultResult, returnDN):
 		#Fonction qui nous permet de réaliser des recherches dans l'annuaire Ldap
-		l=self.Connection("cn=admin,o=concours", "toto") 						#On se connecte à l'annuaire
+		l=self.Connection("cn=admin,o=concours", "root") 						#On se connecte à l'annuaire
 		ldap_result_id = l.search(baseDN, searchScope, searchFilter, retrieveAttributes)		#On effectue une recherche dans l'annuaire qui nous renvoye un code unique
 		result_set = []
 		if MultResult == False:										#On regarde si l'ont souhaite plusieurs ou un seul résultat en retour
@@ -70,7 +70,7 @@ class LdapTest:
 
 	def AddMember(self, cn, sn, mail, DNiut, employee, password):
 		#fonction permettant d'ajoutez un membre
-		l=self.Connection("cn=admin,o=concours", "toto")						#On se connecte à l'annuaire Ldap
+		l=self.Connection("cn=admin,o=concours", "root")						#On se connecte à l'annuaire Ldap
 		dn="cn="+cn+",ou=people,o=concours"								#On reconstitue le dn de l'utilisateur à ajouté
 		attrs = {}											#On crée un dictionnaire qui contiendra les données du membre
 		attrs['objectClass'] = 'inetOrgPerson'
@@ -86,13 +86,13 @@ class LdapTest:
 
 	def DelMember(self, dn):
 		#Fonction utilisé pour supprimer un membre
-		l=self.Connection("cn=admin,o=concours", "toto")
+		l=self.Connection("cn=admin,o=concours", "root")
 		l.delete_s(dn)											#On supprime le membre dans l'annuaire au DN concerné
 		l.unbind_s()
-	
+
 	def AddGroup(self, teamName, members, dnIUT, owner):
 		#Fonction utilisé pour ajouté une équipe
-		l=self.Connection("cn=admin,o=concours", "toto")
+		l=self.Connection("cn=admin,o=concours", "root")
 		dn="cn="+teamName+","+dnIUT									#On crée le DN de l'équipe
 		attrs = {}											#On crée le dictionnaire qui vas contenire les info de l'équipe
 		attrs['objectClass']='groupofnames'
@@ -109,7 +109,7 @@ class LdapTest:
 
 	def ModifyGroup(self,DNiut ,TeamName, NewTeamName, NewMember):
 		#Fonction qui va modifier une équipe
-		l=self.Connection("cn=admin,o=concours", "toto")
+		l=self.Connection("cn=admin,o=concours", "root")
 		newdn="cn="+NewTeamName+","+DNiut								#On crée le nouveau DN de l'équipe
 		l.modrdn_s('cn='+TeamName+','+DNiut, 'cn='+NewTeamName, True)					#On modifie le DN de l'équipe
 		mod = [(ldap.MOD_REPLACE, "member", NewMember )]
@@ -118,7 +118,7 @@ class LdapTest:
 
 	def Compare(self, dn, attr, value):
 		#Fonction qui nous sert à comparé des valeurs dans l'annuaire
-		l=self.Connection("cn=admin,o=concours", "toto")
+		l=self.Connection("cn=admin,o=concours", "root")
 		try:
 			resultat=l.compare_s(dn,attr,value)							#On compare la valeur de l'attribut "attr" avec la valeur "value" 
 			return resultat										#retourne un True ou False
@@ -128,7 +128,7 @@ class LdapTest:
 
 	def AddScore(self, value, DNteam):
 		#Fonction utilisé pour rajouter des points à une équipe
-		l=self.Connection("cn=admin,o=concours", "toto")
+		l=self.Connection("cn=admin,o=concours", "root")
 		searchScope = ldap.SCOPE_SUBTREE
 		retrieveAttributes = ['description']								#On séléctionne l'attribut descritpion qui correspond au score de l'équipe
 		searchFilter = "objectClass=groupOfNames"							#On séléctionne uniquement les équipes
@@ -153,14 +153,14 @@ class LdapTest:
 
 	def Modify(self, cn, attr, value):
 		#Fonction qui vas nous permettre de modifier un membre
-		l=self.Connection("cn=admin,o=concours", "toto")
+		l=self.Connection("cn=admin,o=concours", "root")
                 dn="cn="+cn+",ou=people,o=concours"
                 mod = [(ldap.MOD_REPLACE, attr, value )]
                 l.modify_s(dn,mod)
                 l.unbind_s()
 
 	def GetDN(self, dn, usr):
-		#Fonction qui nous permet de retourné le DN d'une réponse
+		#Fonction qui nous permet de retourné le DN d'une réponse (inutile)
 		searchScope = ldap.SCOPE_SUBTREE
 		retrieveAttributes = None
 		searchFilter = "cn="+usr
