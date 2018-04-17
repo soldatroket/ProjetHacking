@@ -9,9 +9,7 @@ Welcome to ConcourHacking's documentation!
 Ceci est la documentation d'un projet tuteurée dont le sujet est de réalisé un site web pour un concours de hacking
 
 Télécharger le!
----------------
-
-Le projet peut être obtenue via Git::
+   Le projet peut être obtenue via Git::
 
     git clone https://github.com/soldatroket/ProjetHacking.git
 
