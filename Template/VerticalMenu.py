@@ -5,6 +5,7 @@ import Utils
 import ldap
 
 def GetScore(Status, team):
+	#Fonction qui permet de récuperé le score d'une équipe
 	if Status=="student":
         	if team!="Pas de resultat":
 			CookiesMod = Utils.cookies()
@@ -22,6 +23,7 @@ def GetScore(Status, team):
         	return 0
 
 
+#Fonction qui permet d'afficher le menu vertical
 
 def Display(name, team, Status, pagename):
 	score=GetScore(Status, team)

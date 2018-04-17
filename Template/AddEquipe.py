@@ -4,6 +4,8 @@
 import ldap
 import Utils
 
+#Template qui affiche le formulaire d'ajout d'équipe
+
 def Display(members):
 	print '''<div class="col-lg-10">
 			<form method="post" action="b2d.py">

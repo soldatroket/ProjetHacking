@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #coding: utf-8
 
+#Focntion qui permmet d'afficher les énigmes pour une catégorie donnée
+
 def Display(rows):
 	print '''<div class="col-lg-10">'''
 	print '''	<div class="col-lg-12">

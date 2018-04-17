@@ -1,5 +1,8 @@
 #!/usr/lib/python
 #-*- coding: utf-8 -*-
+
+#Fonction qui permet d'aficher le menu vertical de la page des résultat
+
 def Display(name, team, score, Status, pagename):
 	print'''
 	<div class="container" style="margin:0px;padding:0px;">

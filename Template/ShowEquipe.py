@@ -4,6 +4,8 @@
 import ldap
 import Utils
 
+#Fonction qui permmet d'afficher la liste des équipes d'un IUT
+
 def Display(equipe, dniut):
 	print '''<div class="col-lg-10">
 				<div class="Titre">

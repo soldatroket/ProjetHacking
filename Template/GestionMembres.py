@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #coding: utf-8
 
+#Focntion qui afichent la liste des membres et le formulaires d'ajout de nouveaux membres
+
 def Display(AllMember):
 	print '''<div class="col-lg-10">
                  	<div class="col-lg-8">

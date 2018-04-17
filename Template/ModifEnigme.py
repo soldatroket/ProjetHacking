@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #coding: UTF-8
 
+#fonction qui affiche le formulaire de modification d'énigme
+
 def Display(enigme, cat, point):
 	print '''<div class="col-lg-10">
 			<div class="row">

@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #coding: utf-8
 
+#Fonction qui affiche le formulaire d'ajout d'une enigmes
+
 def Display(point, cat):
 	print '''<div class="col-lg-10">
 			<div class="row">

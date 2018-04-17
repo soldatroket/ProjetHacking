@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #coding: utf-8
 
+#Formualire qui affiche le formualaire d'ajout d'une catégorie
+
 def Display(Cat):
 	print '''<div class="col-lg-10">'''
 	print '''	<div class="col-lg-6">

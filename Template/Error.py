@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #coding: utf-8
 
+#Fonction qui permmet d'affichez un message à l'écrans durant 5secondes puis de redirigez l'utilisateur
+
 def Display(Message, Redirection):
 	redirect="5;URL="+Redirection
         print'Content-type: text/html'

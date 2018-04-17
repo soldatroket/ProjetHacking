@@ -4,6 +4,8 @@
 import ldap
 import Utils
 
+#Fontion qui affiche le formualire de modification d'équipe
+
 def Display(TeamName, TeamMembers, members):
 	TeamLength=len(TeamMembers)
 	print '''<div class="col-lg-10">

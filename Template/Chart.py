@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #coding: utf8
 
+#Fonction qui permmet d'afficher le grpahique des résultats
+
 def Display(title, Label, Liste, Typegraph):
 	Name=[]
 	Score=[]
