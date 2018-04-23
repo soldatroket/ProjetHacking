@@ -14,7 +14,7 @@ LdapTest
    +++++++++++
 
        Cette classe nous permet de **manipuler l'annuaire Ldap**.
-       Avant tout il vous faut invoqué la classe si vous souhaitez l'utilisé.
+       Avant tout il vous faut invoquer la classe si vous souhaitez l'utiliser.
        Pour ce faire, vous faite :
 
 .. code-block:: python
@@ -26,7 +26,7 @@ LdapTest
    
 .. decoratormethod:: LdapTest.Connection(dn,mdp)
 
-   Cette méthode est utilisé uniquement par le script ldapp.py lui même.
+   Cette méthode est utilisée uniquement par le script ldapp.py lui même.
    Elle permet d'initialisé une connection avec un annuaire Ldap et retourne un objet **LdapObject**
    
    :param str dn: DN de connexion
@@ -45,7 +45,7 @@ LdapTest
 
 .. decoratormethod:: LdapTest.Search(baseDN, searchScope, retrieveAttributes, searchFilter, MultResult, returnDN)
 
-   Cette méthode est utilisé pour réaliser des recherches dans l'annuaire Ldap.
+   Cette méthode est utilisée pour réaliser des recherches dans l'annuaire Ldap.
    
    :param str baseDN: DN de base d'ou l'ont souhaite réaliser la recherche
    :param str searchScope: Paramétre de recherche Ldap, peut valoir : LDAP.SCOPE_BASE, LDAP.SCOPE_SUBTREE, LDAP.SCOPE_CHILDREN 
@@ -56,7 +56,7 @@ LdapTest
    :return: Un tableau ou une chaine de caractére
    :rtype: list(str) or str
    
-.. warning:: Pour pouvoir utilisé les paramétres de recherches Ldap, vous devez tout d'abord importé le module **ldap**
+.. warning:: Pour pouvoir utiliser les paramétres de recherches Ldap, vous devez tout d'abord importé le module **ldap**
    
 **Exemple :** 
    
@@ -68,7 +68,7 @@ LdapTest
 
 .. decoratormethod:: LdapTest.AddMember(cn, sn, mail, DNiut, employee, password)
 
-   Cette méthode est utilisé pour ajouté un membre dans dans l'annuaire Ldap sous le noeud *ou=people,o=concours*.
+   Cette méthode est utilisée pour ajouter un membre dans dans l'annuaire Ldap sous le noeud *ou=people,o=concours*.
    
    :param str cn: Correspond au pseudonyme du membre.
    :param str sn: Correspond au second pseudonyme du membre. 
@@ -89,7 +89,7 @@ LdapTest
 
 .. decoratormethod:: LdapTest.DelMember(dn)
 
-   Cette méthode est utilisé pour supprimé un membre de l'annuaire Ldap
+   Cette méthode est utilisée pour supprimé un membre de l'annuaire Ldap
    
    :param str dn: Correspond au DN du membre à supprimé.
    :return: *None*
@@ -105,7 +105,7 @@ LdapTest
       
 .. decoratormethod:: LdapTest.AddGroup(teamName, members, dnIUT, owner)
 
-   Cette méthode est utilisé pour ajouté une équipe dans l'annuaire Ldap.
+   Cette méthode est utilisée pour ajouter une équipe dans l'annuaire Ldap.
    
    :param str teamName: Correspond au nom de l'équipe.
    :param list(str) members: Correspond à un tableau qui contient le pseudonyme de tout les membres de l'équipe. 
@@ -124,7 +124,7 @@ LdapTest
       
 .. decoratormethod:: LdapTest.ModifyGroup(DNiut ,TeamName, NewTeamName, NewMember)
 
-   Cette méthode est utilisé pour modifié une équipe dans l'annuaire Ldap.
+   Cette méthode est utilisée pour modifié une équipe dans l'annuaire Ldap.
    
    :param str DNiut: Correspond au DN de l'iut responsable de l'équipe.
    :param str TeamName: Correspond au nom actuel de l'équipe. 
@@ -143,11 +143,11 @@ LdapTest
 
 .. decoratormethod:: LdapTest.Compare(dn, attr, value)
 
-   Cette méthode est utilisé pour comparé l'annuaire Ldap.
+   Cette méthode est utilisée pour comparé l'annuaire Ldap.
    
    :param str dn: Correspond au DN de l'objet qui contient l'attribut que vous souaitez comparé.
    :param str attr : Correspond à l'attribut à comparé. 
-   :param str value: Contient la valeur qui vas être utilisé pour la comparaison.
+   :param str value: Contient la valeur qui va être utiliser pour la comparaison.
    :return: Retourne un boolean qui correpsond au résulat de la comparaison. *True = Comparaison vérifié*
    :rtype: *bool*
    
@@ -161,9 +161,9 @@ LdapTest
       
 .. decoratormethod:: LdapTest.AddScore(value, DNteam)
 
-   Cette méthode est utilisé pour rajouté un score à une équipe de l'annuaire Ldap.
+   Cette méthode est utilisée pour rajouté un score à une équipe de l'annuaire Ldap.
    
-   :param int value: Correspond au nombre de points que l'ont souhaite rajouté à l'équipe.
+   :param int value: Correspond au nombre de points que l'on souhaite rajouter à l'équipe.
    :param str DNteam: Correspond au DN de l'équipe.
    :return: *None*
    :rtype: *None*
@@ -178,7 +178,7 @@ LdapTest
 
 .. decoratormethod:: LdapTest.Modify(cn, attr, value)
 
-   Cette méthode nous permet de modifié un attribut d'un membre
+   Cette méthode nous permet de modifier un attribut d'un membre
    
    :param str cn: Pseudonyme du membre à modifié.
    :param str attr: Nom de l'attribut à modifié.
@@ -196,7 +196,7 @@ LdapTest
       
 .. decoratormethod:: LdapTest.GetDN(dn, usr)
 
-   Cette méthode nous permet de retourné le DN d'une réponse
+   Cette méthode nous permet de retourner le DN d'une réponse
    
    :param str dn: Noeud de base dans lequelle on éffectue la recherche.
    :param str usr: Pseudonyme du membre
@@ -216,7 +216,7 @@ SqlTest
    +++++++++++
 
        Cette classe nous permet de **manipulé la base mySQL**.
-       Avant tout il vous faut invoqué votre classe si vous souhaitez l'utilisé.
+       Avant tout il vous faut invoquer votre classe si vous souhaitez l'utilisé.
        Pour ce faire, vous faite :
        
 .. code-block:: python
@@ -232,7 +232,7 @@ SqlTest
    :return: *None*
    :rtype: *None*
    
-**Exemple :** 
+**Exemple :**
    
    .. code-block:: python
       :linenos:
@@ -247,7 +247,7 @@ SqlTest
    :return: *None*
    :rtype: *None*
    
-**Exemple :** 
+**Exemple :**
    
    .. code-block:: python
       :linenos:
@@ -264,9 +264,9 @@ SqlTest
 
 .. decoratormethod:: SQLTest.Search(Select, From, Where)
 
-   Cette classe permet d'effectué une recherche dans la base mySQL.
+   Cette classe permet d'effectuer une recherche dans la base mySQL.
    
-   :param str Select: Correspond au attributs recherché, peut être multiple en les espaçant d'une virgule : *,*
+   :param str Select: Correspond au attributs recherché, peut être multipler en les espaçant d'une virgule : *,*
    :param str From: Correspond au nom de la table dans lequel il faut recherché les attributs.
    :param str Where: Correspond à la condition de recherche. Mettre "None" pour aucun paramêtre de recherche
    :return: *Retourne le résultat sous forme de tableau*
@@ -284,7 +284,7 @@ SqlTest
 
    Cette méthode permet d'ajouté une entrée dans la base mySQL.
    
-   :param str table: Correspond à la table dans laquel ont souhaite rajouté une entrée.
+   :param str table: Correspond à la table dans laquel on souhaite rajouter une entrée.
    :param str attr: Correspond au nom de l'attribut auquel ont rajoute l'entrée. Peut être multiple en les espaçant d'une virgule
    :param tuple value: Correspond à la valeur de l'attribut. Doit être dans un tuple et dans le même ordre que les attributs de la variable attr
    :return: *Retourne le résultat sous forme de tableau*
@@ -303,10 +303,10 @@ SqlTest
    
    Cette méthode permet de mettre à jour une entrée dans la base mySQL.
    
-   :param str table: Correspond à la table dans laquel ont souhaite mettre à jour l'entrée.
-   :param tuple attr: Correspond au nom de l'attribut auquel ont rajoute l'entrée doit ce trouvé dans un tuple et peut donc être multiple.
+   :param str table: Correspond à la table dans laquel on souhaite mettre à jour l'entrée.
+   :param tuple attr: Correspond au nom de l'attribut auquel on rajoute l'entrée doit se trouver dans un tuple et peut donc être multiple.
    :param tuple value: Correspond à la valeur de l'attribut il doit aussi être dans un tuple et dans le même ordre que la variable attr.
-   :param tuple where: Correspond à la condition de la ligne à laquel ont souhaite modifié l'entrée. Doit ce trouvé dan sun tuple. Le premier élément correspond à l'attribut. Et le deuxième élément à la valeur que doit être égal l'attribut.
+   :param tuple where: Correspond à la condition de la ligne à laquel on souhaite modifié l'entrée. Doit ce trouvé dans un tuple. Le premier élément correspond à l'attribut. Et le deuxième élément à la valeur que doit être égal l'attribut.
    :return: *None*
    :rtype: *None*
    
@@ -323,7 +323,7 @@ SqlTest
    
    Cette méthode permet de supprimé une entrée dans la base mySQL.
    
-   :param str table: Correspond à la table dans laquel ont souhaite supprimé l'entrée.
+   :param str table: Correspond à la table dans laquel on souhaite supprimé l'entrée.
    :param str attr: Correspond au nom de l'attribut qui qui correpsond à la condition de suppression.
    :param str value: Correspond à la valeur dont la variable attr doit être égal pour supprimé l'entrée.
    :return: *None*
@@ -339,7 +339,7 @@ SqlTest
       
 .. decoratormethod:: SQLTest.CreateTeamTable(Name)
    
-   Cette méthode permet de crée la table d'une équipe dans la base mySQL.
+   Cette méthode permet de créer la table d'une équipe dans la base mySQL.
    
    :param str Name: Correspond au nom de l'équipe.
    :return: *None*
@@ -355,7 +355,7 @@ SqlTest
       
 .. decoratormethod:: SQLTest.DeleteTable(Name)
    
-   Cette méthode permet de supprimé une table dans la base mySQL.
+   Cette méthode permet de supprimer une table dans la base mySQL.
    
    :param str Name: Correspond au nom de la table.
    :return: *None*
@@ -371,7 +371,7 @@ SqlTest
       
 .. decoratormethod:: SQLTest.Compare(table, attr, where, value)
    
-   Cette méthode permet de supprimé une table dans la base mySQL.
+   Cette méthode permet de supprimer une table dans la base mySQL.
    
    :param str table: Correspond au nom de la table dans lequel il faut recherché l'attribut.
    :param str attr: Correspond à l'attribut recherché.
@@ -390,7 +390,7 @@ SqlTest
       
 .. decoratormethod:: SQLTest.VerifQuestionTeam(teamName, ID)
    
-   Cette méthode permet de vérifié si une équipe donné à répondue ou non à une énigme grâce à son ID.
+   Cette méthode permet de vérifier si une équipe donnée a répondu ou non à une énigme, grâce à son ID.
    
    :param str teamName: Correspond au nom de l'équipe en question.
    :param str ID: Correspond à l'ID de l'énigme à vérifié.
@@ -433,8 +433,8 @@ cookies
    +++++++++++
 
        Cette classe nous permet de **d'écrire et de lire des cookies** dans un navigateur.
-       Avant tout il vous faut invoqué la classe si vous souhaitez l'utilisé.
-       Pour ce faire, vous faite :
+       Avant tout il vous faut invoquer la classe si vous souhaitez l'utilisé.
+       Pour ce faire, vous faites :
 
 .. code-block:: python
    :linenos:
@@ -443,7 +443,7 @@ cookies
    
 .. decoratormethod:: cookies.SetCookie(cn, memberof, DNmemberof,DNiut,status)
    
-   Cette méthode permet d'écrire les cookies nécessaire los de la connexion d'un utilisateur.
+   Cette méthode permet d'écrire les cookies nécessaires los de la connexion d'un utilisateur.
    Les cookies inscrits lors de la connexion sont :
 	+------------------+-----------------------------+
 	| Nom du cookie    | Description                 |
@@ -496,7 +496,7 @@ cookies
       
 .. decoratormethod:: cookies.ResetSession()
    
-   Cette méthode permet de supprimé l'ensemble des cookies inscrit dans le navigateur (généralement utilisé lors d'une déconnexion).
+   Cette méthode permet de supprimer l'ensemble des cookies inscrit dans le navigateur (généralement utilisé lors d'une déconnexion).
    
 **Exemple :** 
    
@@ -508,7 +508,7 @@ cookies
       
 .. decoratormethod:: cookies.VerifAdmin(token)
    
-   Cette méthode permet de vérfié la validité d'un token liée à un administrateur.
+   Cette méthode permet de vérfier la validité d'un token liée à un administrateur.
    
    :param str token: Correspond au token(numéro de session) de l'utilisateur.
    :return: *Retourne True s'il est valide et False au contraire*
@@ -533,8 +533,8 @@ password
    Description
    +++++++++++
 
-       Cette classe nous permet de **généré un mot de passe et de l'envoyé par mail**.
-       Avant tout il vous faut invoqué votre classe si vous souhaitez l'utilisé.
+       Cette classe nous permet de **générer un mot de passe et de l'envoyer par mail**.
+       Avant tout il vous faut invoquer votre classe si vous souhaitez l'utiliser.
        Pour ce faire, vous faite :
        
 .. code-block:: python
@@ -544,9 +544,9 @@ password
       
 .. decoratormethod:: pass.GeneratePass(mail)
 
-   Cette méthode nous permet de généré un mot de passe et l'envoye automatiquement à un email
+   Cette méthode nous permet de générer un mot de passe et l'envoyer automatiquement à un mail
    
-   :param str mail: Correspond au mail auquelle ont envoye le mot de passe.
+   :param str mail: Correspond au mail auquel on envoie le mot de passe.
    :return: *Renvoye le mot de passe généré*
    :rtype: *str*
    
@@ -562,10 +562,10 @@ password
       
 .. decoratormethod:: pass.SendPass(mail, password)
 
-   Cette méthode nous permet d'envoyé un mot de passe à un mail donné
+   Cette méthode nous permet d'envoyer un mot de passe à un mail donné
    
-   :param str mail: Correspond au mail auquelle ont envoye le mot de passe.
-   :param str password: Corepsond au mot de passe à envoyé.
+   :param str mail: Correspond au mail auquel on envoie le mot de passe.
+   :param str password: Corepsond au mot de passe à envoyer.
    :return: *None*
    :rtype: *None*
    
@@ -577,4 +577,4 @@ password
       Pass=Utils.password.pass()
       Pass.SendPass("jean.paul@gmail.com", "toto")
       
-.. seealso:: Cette méthode et uniquement appelé par la méthode GeneratePass(). Il est déconseillé d'appelé cette méthode directement
+.. seealso:: Cette méthode est uniquement appelée par la méthode GeneratePass(). Il est déconseillé d'appelée cette méthode directement
