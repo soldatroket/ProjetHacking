@@ -33,7 +33,7 @@ Template
 ========
 Le package « **Template** » contient des scripts de template pour les pages HTML
 
-Pour pouvoir utilisés l'un de ces templates vous devez tout d'abord l'importer en faisant : 
+Pour pouvoir utiliser l'un de ces templates vous devez tout d'abord l'importer en faisant : 
 
 .. code-block:: python
    :linenos:
