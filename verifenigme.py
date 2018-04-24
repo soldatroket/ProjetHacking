@@ -26,20 +26,20 @@ Status=CookiesMod.ReadSession('status')
 ###################################################TRAITEMENT############################################################
 
 if Status=="student" and teamName!="Pas de resultat":					#On verifie que le joueur est un étudiant et qu'il fait partit d'une équipe
-	if formulaire.getvalue("ID")!=None and formulaire.getvalue("reponse")!=None:	#On vérifie que l'ont à reçu un ID d'énigme et une réponse
+	if formulaire.getvalue("ID")!=None and formulaire.getvalue("reponse")!=None:	#On vérifie que l'on à reçu un ID d'énigme et une réponse
 		sqlDB=Utils.SQLTest("equipes")
 		DNTeam=CookiesMod.ReadSession('DNteamName')				#On lit le cookie DNteamName
 		sha=hashlib.sha1()
         	sha.update(formulaire.getvalue("reponse"))
         	reponse=sha.hexdigest()							#On code la réponse en sha1
 		ID=cgi.escape(formulaire.getvalue("ID"))				#On récupére l'ID de la question
-		verifQ=sqlDB.VerifQuestionTeam(teamName, ID)				#On verifie si l'équipe à deja répondue à la question(False=répondue\True=pas répondue)
+		verifQ=sqlDB.VerifQuestionTeam(teamName, ID)				#On verifie que l'équipe à deja répondue à la question(False=répondue\True=pas répondue)
 		if verifQ==True:
 			sqlDB.SetDB("concours")
 			verifR=sqlDB.Compare("enigmes", "reponse", "ID ="+ID, reponse)	#On vérifie que la réponse reçue est juste
 			if verifR==True:
 				sqlDB=Utils.SQLTest("concours")
-				point=sqlDB.Search("point", "enigmes", "ID="+ID)	#On récupére le nombre de point associer à l'énigme dans la base SQL
+				point=sqlDB.Search("point", "enigmes", "ID="+ID)	#On récupére le nombre de point associée à l'énigme dans la base SQL
 				LdapMod=Utils.LdapTest()
 				LdapMod.AddScore(point[0][0], DNTeam)			#On ajoute ce score à l'équipe qui à répondue
 				sqlDB.SetDB("equipes")
