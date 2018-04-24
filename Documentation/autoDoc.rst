@@ -9,7 +9,7 @@ Utils
 =====
 Le packetage Utils contient un ensemble de scripts permettant entre autre de communiquer avec la **base SQL**, **annuaire Ldap**, **Lecture/Ecriture de cookies**, **Gestion mot de passe**.
 
-Pour pouvoir utilisé une des classes des fichiers suivants : 
+Pour pouvoir utiliser une des classes des fichiers suivants : 
 
 -**ldapp.py**
 
