@@ -39,5 +39,5 @@ class Pass:
 			token += char[random.randint(0,len(char)-1)]			#On séléctionne un charactére aléatoire dans la chaine "char"
 		self.SendPass(mail, token)						#On envoye le mdp à l'email concerné
 		sqlDB=sql.SQLTest("concours")
-		sqlDB.AddEntry("resetmdp", "token, mail", (token, mail))		#On crée le token dans la base SQL qui nous permettrat de vérifier la validité de la demande
+		sqlDB.AddEntry("resetmdp", "token, mail", (token, mail))		#On crée le token dans la base SQL qui nous permettrat de vérifier la validiter de la demande
 		return token
