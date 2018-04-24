@@ -14,7 +14,7 @@ cgitb.enable()
 form=cgi.FieldStorage()
 
 if form.getvalue('token')!=None:
-	#On verifie que l'ont à bien reçu un token qui permet de vérifier la validité
+	#On verifie que l'on à bien reçu un token qui permet de vérifier la validité de la demande
         print'Content-type: text/html'
         print''
 	sqlDB=Utils.sql.SQLTest("concours")
@@ -54,7 +54,7 @@ if form.getvalue('token')!=None:
 		Template.Error.Display("Accés refusé","index.py")
 
 if form.getvalue('tkn')!=None and form.getvalue('pass01')!=None:
-	#On vérifie que l'ont a bien recu le nouveau mot de passe 
+	#On vérifie que l'on à bien reçu le nouveau mot de passe 
 	sha=hashlib.sha1()
 	sha.update(form.getvalue('pass01'))						#On crypte le nouveau mot de passe en sha1
 	passw=sha.hexdigest()
@@ -67,5 +67,5 @@ if form.getvalue('tkn')!=None and form.getvalue('pass01')!=None:
 	searchFilter = "mail="+mail[0][0]
 	cn=LdapMod.Search(baseDN, searchScope, retrieveAttributes, searchFilter, False, False)	#On récupére le pseudo du joueur liée à l'email
 	LdapMod.Modify(cn, "userPassword", passw)					#On modifie le mot de passe de l'utilisateur
-	sqlDB.DelEntry("resetmdp", "mail", mail[0][0])					#On supprime le token de la base SQL une fois l'opération réaliser
+	sqlDB.DelEntry("resetmdp", "mail", mail[0][0])					#On supprime le token de la base SQL une fois l'opération réalisée
 	Template.Error.Display("Votre mot de passe à bien était changé","index.py")

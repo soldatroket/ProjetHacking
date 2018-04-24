@@ -11,12 +11,12 @@ form=cgi.FieldStorage()
 
 CookiesMod=Utils.cookies()
 
-if CookiesMod.ReadSession("session")!="None":			#On regarde si l'ont à deja des cookies enregistré, si oui on va redirigé l'utilisateur vers le menu
+if CookiesMod.ReadSession("session")!="None":			#On regarde si l'on à deja des cookies enregistrés, si oui on va rediriger l'utilisateur vers le menu
 	print'Content-type: text/html'
 	print'Location:menu.py'
 	print ''
 else:
-	if form.getvalue('mail'):				#On regarde si l'ont à recu un attribut mail (utilisé pour le reset de mot de passe)
+	if form.getvalue('mail'):				#On regarde si l'on à recu un attribut mail (utilisé pour le reset de mot de passe)
         	Utils.password.Pass().GeneratePass(form.getvalue('mail'))
 
 	print'Content-type: text/html'

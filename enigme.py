@@ -24,7 +24,7 @@ Status=CookiesMod.ReadSession('status')
 DNteam=CookiesMod.ReadSession('DNteamName')
 
 def Display():
-	if formulaire.getvalue("ID")!=None:						#On vérifie que l'ont à bien rçu l'ID de l'énigme à aficher
+	if formulaire.getvalue("ID")!=None:						#On vérifie que l'ont à bien reçu l'ID de l'énigme à afficher
 		id=cgi.escape(formulaire.getvalue("ID"))
 		sqlDB=Utils.SQLTest("concours")
 		rows = sqlDB.Search("ID, Titre, Question, Reponse, Catégorie, Point, Fichier","enigmes","ID="+id)		#On récupére toutes les infos de l'énigme
@@ -47,8 +47,8 @@ def Display():
         		<![endif]-->
         	<head>
         	<body>'''
-		if len(rows)!=0:
-			Template.VerticalMenu.Display(name, teamName, Status, "enigme")					#On affiche le menu veritcal
+		if len(rows)!=0:																	#On vérifie que l'on à bien récuperé des informations
+			Template.VerticalMenu.Display(name, teamName, Status, "enigme")					#On affiche le menu vertical
 			print '''<div class="col-lg-10 text-center">
 					<div class="row">
 						<form method="post" action="verifenigme.py" class="col-lg-12">

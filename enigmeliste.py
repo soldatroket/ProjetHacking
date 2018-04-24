@@ -59,7 +59,7 @@ for i in categorie:											#On fait une boucle sur toutes les catégories
 						<h1>'''+i[1]+'''</h1>
 					</td>
 				</tr>'''
-	for y in enigmes:										#On réalise une boucle qui affiche les énigmes de la catégorie dans laquelle l'ont ce trouve
+	for y in enigmes:										#On réalise une boucle qui affiche les énigmes de la catégorie dans laquelle l'on ce trouve
 		if y[4]==i[1]:										#Condition qui permet de vérifier si l'énigme fait partit de la catégorie
 			print '''<tr>
 					<td>
@@ -71,7 +71,7 @@ for i in categorie:											#On fait une boucle sur toutes les catégories
 				for rep in reponse:
 					if rep[0]==y[0]:
 						present=True
-				if present==True:							#Affiche un symabole validé à coter de l'énigme si l'ont y à repondue
+				if present==True:							#Affiche un symbole validé à coter de l'énigme si l'on y à repondue
 					print		'<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>'
 				else:
 					print           '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>'

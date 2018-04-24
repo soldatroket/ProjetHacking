@@ -78,7 +78,7 @@ elif Status=="admin" and CookiesMod.VerifAdmin(SessionToken)==True:             
 	
 	elif TypeF=="enigme":
 		sqlDB=Utils.SQLTest("concours")
-                rows = sqlDB.Search("ID, Titre, Question, Reponse, Catégorie, Point, Fichier, owner","enigmes","owner='"+name+"'")	#On récupére toutes les énigmes créer par l'administrateur connecter
+                rows = sqlDB.Search("ID, Titre, Question, Reponse, Catégorie, Point, Fichier, owner","enigmes","owner='"+name+"'")	#On récupére toutes les énigmes crées par l'administrateur connecté
 		Template.ShowEnigme.Display(rows)
 	
 	elif TypeF=="addenigme" and Status=="admin":

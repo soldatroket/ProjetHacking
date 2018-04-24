@@ -10,7 +10,7 @@ import ldap
 import Template
 cgitb.enable()
 
-#######################################REUPERATION DES COOKIES####################################################
+#######################################RECUPERATION DES COOKIES####################################################
 
 CookiesMod=Utils.cookies()
 name=CookiesMod.ReadSession('name')
