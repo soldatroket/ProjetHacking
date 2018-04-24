@@ -125,7 +125,7 @@ Installation
         
     sudo apt install mysql-server
     
-.. seealso:: Une fois apache installé il faut lui authoriser l'éxécution de script python pour ce faire suivez les différentes étapes présentes dans la documentation technique.
+.. important:: Une fois apache installé il faut lui authoriser l'éxécution de script python pour ce faire suivez les différentes étapes présentes dans la documentation technique.
     
 
 
